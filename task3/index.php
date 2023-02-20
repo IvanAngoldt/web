@@ -16,6 +16,12 @@ if (empty($_POST['fio'])) {
   $errors = TRUE;
 }
 
+$errors = FALSE;
+if (empty($_POST['year'])) {
+  print('Выберите год.<br/>');
+  $errors = TRUE;
+}
+
 if ($errors) {
   exit();
 }
@@ -25,10 +31,11 @@ $pass = '5599036';
 $db = new PDO('mysql:host=localhost;dbname=u52855', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
 
 $fio = $_POST['fio'];
+$year = $_POST['year'];
 
 try {
-  $stmt = $db->prepare("INSERT INTO application (name) VALUES ($fio)");
-  $stmt -> execute(['fio']);
+  $stmt = $db->prepare("INSERT INTO application (fio, year) VALUES ($fio, $year)");
+  $stmt -> execute(['fio', 'year']);
 }
 catch(PDOException $e){
   print('Error : ' . $e->getMessage());
