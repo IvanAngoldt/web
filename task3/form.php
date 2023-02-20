@@ -10,10 +10,10 @@
 <body>
 <form class="form" action="" method="POST">
   <div class="form_item">
-    <input name="name" />
+    Имя: <input name="name" />
   </div>
   <div class="form_item">
-    <select name="year">
+    Год: <select name="year">
       <?php 
       for ($i = 1922; $i <= 2022; $i++) {
         printf('<option value="%d">%d год</option>', $i, $i);
@@ -21,7 +21,9 @@
       ?>
     </select>
   </div>
-  <input class="input" type="submit" value="ok" />
+  <div class="form_item">
+    <input class="input" type="submit" value="ok" />
+  </div>
 </form>
 </body>
 </html>
