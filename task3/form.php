@@ -21,7 +21,7 @@
       ?>
     </select>
   </div>
-  <input type="submit" value="ok" />
+  <input class="input" type="submit" value="ok" />
 </form>
 </body>
 </html>
