@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 }
 
 $errors = FALSE;
-if (empty($_POST['fio'])) {
+if (empty($_POST['name'])) {
   print('Заполните имя.<br/>');
   $errors = TRUE;
 }
@@ -24,12 +24,12 @@ $user = 'u52855';
 $pass = '5599036';
 $db = new PDO('mysql:host=localhost;dbname=u52855', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
 
-$fio = $_POST['fio'];
+$name = $_POST['name'];
 $year = $_POST['year'];
 
 try {
-  $stmt = $db->prepare("INSERT INTO application (fio, year) VALUES ('$fio', '$year')");
-  $stmt -> execute(['fio', 'year']);
+  $stmt = $db->prepare("INSERT INTO application (name, year) VALUES ('$name', '$year')");
+  $stmt -> execute(['name', 'year']);
 }
 catch(PDOException $e){
   print('Error : ' . $e->getMessage());
