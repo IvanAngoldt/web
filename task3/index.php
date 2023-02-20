@@ -43,7 +43,7 @@ $db = new PDO('mysql:host=localhost;dbname=u52855', $user, $pass, array(PDO::ATT
 // Подготовленный запрос. Не именованные метки.
 try {
   $stmt = $db->prepare("INSERT INTO application (fio) VALUES (:fio)");
-  $stmt -> execute(array('fio'=>'perfect'));
+  $stmt -> execute(['fio'=>'perfect']);
 }
 catch(PDOException $e){
   print('Error : ' . $e->getMessage());
