@@ -1,5 +1,5 @@
 <form action="" method="POST">
-  <input name="fio" />
+  <input name="fio1" />
   <select name="year">
     <?php 
     for ($i = 1922; $i <= 2022; $i++) {
