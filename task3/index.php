@@ -36,7 +36,7 @@ die($e->getMessage());
 $fio = $_POST['fio'];
 
 $db->query("SET NAMES 'utf8'");
-$db->query("INSERT INTO form (fio) VALUES ('$fio')");
+$db->query("INSERT INTO form (fio) VALUES ($fio)");
 $db->close();
 if ($db->connect_error){
     echo "Error Number: ".$db->connect_errno."<br>";
