@@ -8,7 +8,7 @@
   <title>Form</title>
 </head>
 <body>
-<form action="" method="POST">
+<form class="form" action="" method="POST">
   <div class="form_item">
     <input name="name" />
   </div>

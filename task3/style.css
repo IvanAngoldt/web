@@ -1,3 +1,8 @@
+.form {
+    border: 4px double black;
+    padding: 10px;
+}
+
 .form_item {
     margin: 5px;
     padding: 5px;
