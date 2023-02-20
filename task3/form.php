@@ -1,4 +1,4 @@
 <form action="" method="POST">
-  <input name="fio1" />
+  <input name="fio" />
   <input type="submit" value="ok" />
 </form>
