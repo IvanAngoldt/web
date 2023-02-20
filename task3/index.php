@@ -27,7 +27,7 @@ $db = new PDO('mysql:host=localhost;dbname=u52855', $user, $pass, array(PDO::ATT
 $fio = $_POST['fio'];
 
 try {
-  $stmt = $db->prepare("INSERT INTO application (name) VALUES ($fio)");
+  $stmt = $db->prepare("INSERT INTO application SET name = $fio");
   $stmt -> execute(['fio']);
 }
 catch(PDOException $e){
