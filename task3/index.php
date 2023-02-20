@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
 // Проверяем ошибки.
 $errors = FALSE;
-if (empty($_POST['fio1'])) {
+if (empty($_POST['fio'])) {
   print('Заполните имя.<br/>');
   $errors = TRUE;
 }
@@ -43,7 +43,7 @@ $db = new PDO('mysql:host=localhost;dbname=u52855', $user, $pass, array(PDO::ATT
 // Подготовленный запрос. Не именованные метки.
 try {
   $stmt = $db->prepare("INSERT INTO application SET name = ?");
-  $stmt -> execute(array('fio1'));
+  $stmt -> execute(array('fio'));
 }
 catch(PDOException $e){
   print('Error : ' . $e->getMessage());
