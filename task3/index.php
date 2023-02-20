@@ -34,8 +34,8 @@ $fio = $_POST['fio'];
 $year = $_POST['year'];
 
 try {
-  $stmt = $db->prepare("INSERT INTO application (fio, year) VALUES ($fio, $year)");
-  $stmt -> execute(['fio', 'year']);
+  $stmt = $db->prepare("INSERT INTO application (fio,year) VALUES ($fio,$year)");
+  $stmt -> execute(['fio','year']);
 }
 catch(PDOException $e){
   print('Error : ' . $e->getMessage());
