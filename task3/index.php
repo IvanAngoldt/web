@@ -1,22 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Form</title>
-</head>
-<body>
-<form action="" method="POST">
-  <input name="name" />
-  <select name="year">
-    <?php 
-    for ($i = 1922; $i <= 2022; $i++) {
-      printf('<option value="%d">%d год</option>', $i, $i);
-    }
-    ?>
-  </select>
-  <input type="submit" value="ok" />
-</form>
-</body>
-</html>
+<?php
+
+header('Content-Type: text/html; charset=UTF-8');
+
+if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+  if (!empty($_GET['save'])) {
+    print('Спасибо, результаты сохранены.');
+  }
+  include('form.php');
+  exit();
+}
+
+$errors = FALSE;
+if (empty($_POST['name'])) {
+  print('Заполните имя.<br/>');
+  $errors = TRUE;
+}
+
+if ($errors) {
+  exit();
+}
+
+$user = 'u52855';
+$pass = '5599036';
+$db = new PDO('mysql:host=localhost;dbname=u52855', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
+
+$name = $_POST['name'];
+$year = $_POST['year'];
+
+try {
+  $stmt = $db->prepare("INSERT INTO application (name, year) VALUES ('$name', '$year')");
+  $stmt -> execute(['name', 'year']);
+}
+catch(PDOException $e){
+  print('Error : ' . $e->getMessage());
+  exit();
+}
+
+header('Location: ?save=1');
+?>
