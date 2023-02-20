@@ -34,7 +34,6 @@ $fio = $_POST['fio'];
 
 try {
   $stmt = $db->prepare("INSERT INTO application (fio) VALUES ($fio)");
-  $stmt -> execute(['fio']);
 }
 catch(PDOException $e){
   print('Error : ' . $e->getMessage());
