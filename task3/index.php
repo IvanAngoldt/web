@@ -25,7 +25,7 @@ $pass = '5599036';
 $db = new PDO('mysql:host=localhost;dbname=u52855', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
 
 try {
-  $stmt = $db->prepare("INSERT INTO application SET fio = ?");
+  $stmt = $db->prepare("INSERT INTO application SET name = ?");
   $stmt -> execute(['fio']);
 }
 catch(PDOException $e){
