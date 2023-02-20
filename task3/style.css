@@ -1,6 +1,7 @@
 .form {
     border: 4px double black;
     padding: 10px;
+    display: block;
 }
 
 .form_item {
