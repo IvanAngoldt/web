@@ -31,11 +31,10 @@ $pass = '5599036';
 $db = new PDO('mysql:host=localhost;dbname=u52855', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
 
 $fio = $_POST['fio'];
-$year = $_POST['year'];
 
 try {
-  $stmt = $db->prepare("INSERT INTO application (fio,year) VALUES ($fio,$year)");
-  $stmt -> execute(['fio','year']);
+  $stmt = $db->prepare("INSERT INTO application (fio) VALUES ($fio)");
+  $stmt -> execute(['fio']);
 }
 catch(PDOException $e){
   print('Error : ' . $e->getMessage());
