@@ -37,7 +37,7 @@ $sex = $_POST['sex'];
 $limb = $_POST['limb'];
 
 try {
-  $stmt = $db->prepare("INSERT INTO application (name, email, year, sex) VALUES ('$name', '$email', '$year', '$sex', '$limb')");
+  $stmt = $db->prepare("INSERT INTO application (name, email, year, sex, limb) VALUES ('$name', '$email', '$year', '$sex', '$limb')");
   $stmt -> execute(['name', 'email', 'year', 'sex', 'limb']);
 }
 catch(PDOException $e){
