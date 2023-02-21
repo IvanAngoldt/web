@@ -77,7 +77,7 @@
         <p>
           Биография:
         </p>
-        <textarea name="biography" cols=24 resize: none;></textarea>
+        <textarea name="biography" cols=24></textarea>
       </div>
     </div>  
     <input type="submit" class="btn" value="ok" />

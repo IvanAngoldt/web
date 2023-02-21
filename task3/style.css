@@ -32,6 +32,10 @@ p {
     margin-bottom: 5px;
 }
 
+textarea {
+    resize: none;
+}
+
 .form-content {
     padding-bottom: 15px;
 }
