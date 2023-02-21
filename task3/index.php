@@ -29,7 +29,7 @@ $email = $_POST['email'];
 $year = $_POST['year'];
 $sex = $_POST['sex'];
 $limb = $_POST['limb'];
-$biography = $_POST['limb'];
+$biography = $_POST['biography'];
 
 try {
   $stmt = $db->prepare("INSERT INTO application (name, email, year, sex, limb, biography) VALUES ('$name', '$email', '$year', '$sex', '$limb', '$biography')");
