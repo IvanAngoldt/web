@@ -46,14 +46,14 @@
             Пол:
           </p>
           <li>
-            <input type="radio" id="qwe" name="sex" value="male" checked>
-            <label for="qwe">
+            <input type="radio" id="radioMale" name="sex" value="male" checked>
+            <label for="radioMale">
               Мужчина
             </label>
           </li>
           <li>
-            <input type="radio" id="qwe" name="sex" value="female">
-            <label for="qwe">
+            <input type="radio" id="radioFemale" name="sex" value="female">
+            <label for="radioFemale">
               Женщина
             </label>
           </li>
@@ -65,14 +65,14 @@
             Конечностей:
           </p>
           <li>
-            <input type="radio" name="limbs" value="3">
-              <label>
+            <input type="radio" id="radioThree" name="limbs" value="3">
+              <label for="radioThree">
                 3
               </label>
           </li>
             <li>
-            <input type="radio" name="limbs" value="4" checked>
-              <label>
+            <input type="radio" id="radioFour" name="limbs" value="4" checked>
+              <label for="radioThree">
                 4
               </label>
             </li>
