@@ -47,13 +47,13 @@
           </p>
           <li>
             <input type="radio" id="qwe" name="sex" value="male" checked>
-            <label>
+            <label for="qwe">
               Мужчина
             </label>
           </li>
           <li>
             <input type="radio" id="qwe" name="sex" value="female">
-            <label>
+            <label for="qwe">
               Женщина
             </label>
           </li>
