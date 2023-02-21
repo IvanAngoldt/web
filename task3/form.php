@@ -78,9 +78,9 @@
           Биография:
         </p>
         <p class="small-text">
-          (макс. 120 символов)
+          (макс. 128 символов)
         </p>
-        <textarea name="biography" cols=24 rows=4 maxlength=130></textarea>
+        <textarea name="biography" cols=24 rows=4 maxlength=128></textarea>
       </div>
     </div>  
     <input type="submit" value="Отправить" />
