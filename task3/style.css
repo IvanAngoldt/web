@@ -2,7 +2,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 99vh;
+    min-height: 98vh;
     background: #eceffc;
 }
 
