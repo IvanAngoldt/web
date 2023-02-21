@@ -16,7 +16,10 @@
       <input name="name" />
     </div><br>
     <div class="form-item">
-      Email:<br><input name="email" />
+      <p>
+        Email:
+      </p>
+      <input name="email" />
     </div><br>
     <div class="form-item">
       Год:<select name="year">
