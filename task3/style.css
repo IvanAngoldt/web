@@ -32,6 +32,10 @@ p {
     margin-bottom: 5px;
 }
 
+.small-text {
+    font-size: 4px;
+}
+
 textarea {
     resize: none;
 }

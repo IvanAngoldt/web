@@ -75,7 +75,10 @@
       </div>
       <div class="form-item">
         <p>
-          Биография (макс. 120 символов):
+          Биография:
+        </p>
+        <p class="small-text">
+          макс. 120 символов:
         </p>
         <textarea name="biography" cols=24 rows=4 maxlength=130></textarea>
       </div>
