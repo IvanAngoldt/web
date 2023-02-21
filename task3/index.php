@@ -16,9 +16,7 @@ if (empty($_POST['name'])) {
   $errors = TRUE;
 }
 
-if ($errors) {
-  exit();
-}
+
 
 $user = 'u52855';
 $pass = '5599036';
