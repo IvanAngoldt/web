@@ -51,10 +51,12 @@
           </label>
         </li>
       </ul>
-    </div><br>
+    </div>
     <div class="form-item">
       <ul>
-        Конечностей:
+        <p>
+          Конечностей:
+        </p>
         <li>
           <input type="radio" name="limbs" value="3">
             <label>
