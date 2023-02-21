@@ -10,7 +10,10 @@
 <body>
   <form class="form" action="" method="POST">
     <div class="form-item">
-      Имя:<br><input name="name" />
+      <p>
+        Имя
+      </p>
+      <input name="name" />
     </div><br>
     <div class="form-item">
       Email:<br><input name="email" />
