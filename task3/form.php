@@ -10,6 +10,9 @@
 </head>
 <body>
   <form action="" method="POST">
+    <div class="message">
+      123
+    </div> 
     <div class="form-content">
       <div class="form-item">
         <p>
