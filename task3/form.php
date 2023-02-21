@@ -15,13 +15,15 @@
     <div class="form-item">
       Email:<br><input name="email" />
     </div><br>
+    <div class="form-item">
     Год:<select name="year">
       <?php 
       for ($i = 1922; $i <= 2022; $i++) {
         printf('<option value="%d">%d год</option>', $i, $i);
       }
       ?>
-    </select><br>
+    </select>
+    </div><br>
     Пол:<input type="radio" name="sex" value="male" checked>
       <label>
         Мужчина
