@@ -16,7 +16,7 @@
     e-mail: <input name="email" />
   </div>
   <div class="radio-class1">
-  <span>Укажи пол</span>
+  <span>Укажи пол</span><br>
   <label><input type="radio" checked="checked" name="sex" value="male"/>
     Мужчина
   </label>
@@ -25,7 +25,7 @@
   </label>
   </div>
   <div class="radio-class2">
-  <span>Сколько у вас конечностей</span>
+  <span>Сколько у вас конечностей</span><br>
   <label><input type="radio" checked="checked" name="limb" value="four"/>
     Четыре
   </label>
