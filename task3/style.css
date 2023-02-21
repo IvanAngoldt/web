@@ -2,6 +2,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     min-height: 98vh;
     background: #eceffc;
     font-family: Montserrat;
@@ -45,5 +46,5 @@ p {
 }
 
 h1 {
-    z-index: 100;
+    
 }
