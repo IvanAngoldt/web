@@ -79,8 +79,8 @@
         </p>
         <textarea name="biography"></textarea>
       </div>
-      <input type="submit" class="btn" value="ok" />
     </div>  
+    <input type="submit" class="btn" value="ok" />
   </form>
 </body>
 </html>
