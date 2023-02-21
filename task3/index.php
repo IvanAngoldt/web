@@ -24,12 +24,12 @@ $errors = FALSE;
 if (empty($_POST['email'])) {
   print('Заполните email.<br/>');
   $errors = TRUE;
-} else {
-  $errors = FALSE;
-  if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) == false)  {
-    print('email заполнен неверно.<br/>');
-    $errors = TRUE;
-  }
+}
+
+$errors = FALSE;
+if (empty($_POST['email']) == false && filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) == false)  {
+  print('email заполнен неверно.<br/>');
+  $errors = TRUE;
 }
 
 $errors = FALSE;
