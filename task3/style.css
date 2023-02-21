@@ -38,4 +38,5 @@ p {
 input {
     color: white;
     background: 0;
+    outline: none;
 }
