@@ -1,7 +1,9 @@
 body {
-    background: linear-gradient(45deg, #FC466B, #3F5EFB);
-    height: 100vh;
-    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #eceffc;
 }
 
 form {
