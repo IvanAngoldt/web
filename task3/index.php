@@ -23,7 +23,7 @@ if (empty($_POST['email'])) {
 }
 
 $errors = FALSE;
-if (empty($_POST['email'])) {
+if (empty($_POST['biography'])) {
   print('Заполните биографию.<br/>');
   $errors = TRUE;
 }
