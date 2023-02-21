@@ -29,5 +29,9 @@
     <label>
       4
     </label>
+
+  Биография:<input name="biography" />
+
   <input type="submit" value="ok" />
+
 </form>

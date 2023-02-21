@@ -29,10 +29,11 @@ $email = $_POST['email'];
 $year = $_POST['year'];
 $sex = $_POST['sex'];
 $limb = $_POST['limb'];
+$biography = $_POST['limb'];
 
 try {
-  $stmt = $db->prepare("INSERT INTO application (name, email, year, sex, limb) VALUES ('$name', '$email', '$year', '$sex', '$limb')");
-  $stmt -> execute(['name', 'email', 'year', 'sex', 'limb']);
+  $stmt = $db->prepare("INSERT INTO application (name, email, year, sex, limb, biography) VALUES ('$name', '$email', '$year', '$sex', '$limb', '$biography')");
+  $stmt -> execute(['name', 'email', 'year', 'sex', 'limb', 'biography']);
 }
 catch(PDOException $e){
   print('Error : ' . $e->getMessage());
