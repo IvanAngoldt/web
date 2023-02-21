@@ -9,7 +9,9 @@
 </head>
 <body>
   <form class="form" action="" method="POST">
-    Имя:<input name="name" /><br>
+    <div class="form-item">
+      Имя:<input name="name" />
+    <div><br>
     Email:<input name="email" /><br>
     Год:<select name="year">
       <?php 
