@@ -28,7 +28,7 @@
           Год:
           <select name="year">
             <?php 
-            for ($i = 2000; $i <= 2023; $i++) {
+            for ($i = 2022; $i >= 1922; $i--) {
               printf('<option value="%d">%d год</option>', $i, $i);
             }
             ?>
