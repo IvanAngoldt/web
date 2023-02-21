@@ -27,13 +27,10 @@ $db = new PDO('mysql:host=localhost;dbname=u52855', $user, $pass, array(PDO::ATT
 $name = $_POST['name'];
 $email = $_POST['email'];
 $year = $_POST['year'];
-$sex = $_POST['sex'];
-$limbs = $_POST['sex'];
-$biography = $_POST['biography'];
 
 try {
-  $stmt = $db->prepare("INSERT INTO application (name, email, year, sex, limbs, biography) VALUES ('$name', '$email', '$year', '$sex', '$limbs', '$biography')");
-  $stmt -> execute(['name', 'email', 'year', 'sex', 'limbs', 'biography']);
+  $stmt = $db->prepare("INSERT INTO application (name, email, year) VALUES ('$name', '$email', '$year')");
+  $stmt -> execute(['name', 'email', 'year']);
 }
 catch(PDOException $e){
   print('Error : ' . $e->getMessage());
