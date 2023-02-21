@@ -11,7 +11,7 @@
 <form class="form" action="" method="POST">
   Имя: <input name="name" />
   e-mail: <input name="email" />
-  Укажите пол</br><label><input type="radio" checked="checked" name="sex" value="male"/>
+  ><label><input type="radio" checked="checked" name="sex" value="male"/>
     Мужчина
   </label>
   <label><input type="radio" name="sex" value="female" />
