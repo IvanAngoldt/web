@@ -1,5 +1,6 @@
 body {
     width: 300px;
+    display: block;
     align-items: center;
     min-height: 98vh;
     background: #eceffc;
