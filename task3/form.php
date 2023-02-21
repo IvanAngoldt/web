@@ -74,7 +74,7 @@
         </ul>
       </div>
       <div class="form-item">
-        <p>
+        <p class="big-text">
           Биография:
         </p>
         <p class="small-text">
