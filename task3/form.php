@@ -46,13 +46,13 @@
             Пол:
           </p>
           <li>
-            <input type="radio" name="sex" value="male" checked>
+            <input type="radio" id="qwe" name="sex" value="male" checked>
             <label>
               Мужчина
             </label>
           </li>
           <li>
-            <input type="radio" name="sex" value="female">
+            <input type="radio" id="qwe" name="sex" value="female">
             <label>
               Женщина
             </label>

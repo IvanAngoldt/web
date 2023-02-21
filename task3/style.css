@@ -70,3 +70,9 @@ textarea {
   color: white;
   padding: 5px;
 }
+
+#qwe {
+    transform:scale(1.3);
+    opacity:0.9;
+    cursor:pointer;
+}
