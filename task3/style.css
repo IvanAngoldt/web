@@ -35,7 +35,7 @@ p {
     padding-bottom: 15px;
 }
 
-input {
+.form-content input {
     color: white;
     background: 0;
     outline: 0 !important;
