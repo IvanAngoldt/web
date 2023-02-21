@@ -32,10 +32,12 @@
           ?>
         </select>
       </p>
-    </div><br>
+    </div>
     <div class="form-item">
       <ul>
-        Пол:
+        <p>
+          Пол:
+        </p>
         <li>
           <input type="radio" name="sex" value="male" checked>
           <label>
