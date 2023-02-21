@@ -10,10 +10,10 @@
 <body>
   <form class="form" action="" method="POST">
     <div class="form-item">
-      Имя:<input name="name" />
+      Имя:<br><input name="name" />
     </div><br>
     <div class="form-item">
-      Email:<input name="email" />
+      Email:<br><input name="email" />
     </div><br>
     Год:<select name="year">
       <?php 
