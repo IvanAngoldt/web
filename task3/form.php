@@ -11,10 +11,10 @@
   <form class="form" action="" method="POST">
     <div class="form-item">
       Имя:<input name="name" />
-    <div><br>
+    </div><br>
     <div class="form-item">
       Email:<input name="email" />
-    <div><br>
+    </div><br>
     Год:<select name="year">
       <?php 
       for ($i = 1922; $i <= 2022; $i++) {
