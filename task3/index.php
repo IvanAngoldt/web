@@ -15,17 +15,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 }
 
 $errors = FALSE;
+
 if (empty($_POST['name'])) {
   print('Заполните имя.<br/>');
   $errors = TRUE;
-}
-
-if (empty($_POST['email'])) {
+} else if (empty($_POST['email'])) {
   print('Заполните email.<br/>');
   $errors = TRUE;
-}
-
-if (empty($_POST['biography'])) {
+} else if (empty($_POST['biography'])) {
   print('Заполните биографию.<br/>');
   $errors = TRUE;
 }
