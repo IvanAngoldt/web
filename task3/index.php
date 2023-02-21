@@ -14,15 +14,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   exit();
 }
 
+$name = $_POST['name'];
+$email = $_POST['email'];
+$year = $_POST['year'];
+$sex = $_POST['sex'];
+$limbs = $_POST['limbs'];
+$biography = $_POST['biography'];
+
 $errors = FALSE;
 
-if (empty($_POST['name'])) {
+if (empty($name)) {
   print('Заполните имя.<br/>');
   $errors = TRUE;
-} else if (empty($_POST['email'])) {
+} else if (empty($email)) {
   print('Заполните email.<br/>');
   $errors = TRUE;
-} else if (empty($_POST['biography'])) {
+} else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+  print('email заполнен неверно.<br/>');
+  $errors = TRUE;
+} else if (empty($biography)) {
   print('Заполните биографию.<br/>');
   $errors = TRUE;
 }
@@ -35,12 +45,7 @@ $user = 'u52855';
 $pass = '5599036';
 $db = new PDO('mysql:host=localhost;dbname=u52855', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
 
-$name = $_POST['name'];
-$email = $_POST['email'];
-$year = $_POST['year'];
-$sex = $_POST['sex'];
-$limbs = $_POST['limbs'];
-$biography = $_POST['biography'];
+
 
 try {
   $stmt = $db->prepare("INSERT INTO application (name, email, year, sex, limbs, biography) VALUES ('$name', '$email', '$year', '$sex', '$limbs', '$biography')");
