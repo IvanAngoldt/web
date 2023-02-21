@@ -83,7 +83,7 @@
         <textarea name="biography" cols=24 rows=4 maxlength=130></textarea>
       </div>
     </div>  
-    <input type="submit" value="ok" />
+    <input type="submit" value="Отправить" />
   </form>
 </body>
 </html>
