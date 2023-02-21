@@ -47,6 +47,7 @@ h1 {
 
 textarea {
     resize: none;
+    background: transparent;
 }
 
 .form-content {
