@@ -12,5 +12,14 @@
     ?>
   </select>
 
+  Пол:<input type="radio" name="sex" value="male" checked>
+    <label>
+      Мужчина
+    </label>
+  <input type="radio" name="sex" value="female">
+    <label>
+      Женщина
+    </label>
+
   <input type="submit" value="ok" />
 </form>
