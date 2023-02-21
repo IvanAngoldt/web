@@ -46,7 +46,7 @@
   <div class="form_item">
     Имя: <input name="biography" />
   </div>
-  <input class="input" type="submit" value="Отправить" />
+  <input class="input" type="submit" value="ok" />
 </form>
 </body>
 </html>
