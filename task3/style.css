@@ -52,6 +52,7 @@ textarea {
     background: transparent;
     outline: none;
     color: white;
+    width: 100%;
 }
 
 .form-content {
