@@ -9,10 +9,10 @@
   <title>Form</title>
 </head>
 <body>
-  <div class="message">
-    Оповещение
-  </div> 
   <form action="" method="POST">
+    <div class="message">
+      Оповещение
+    </div> 
     <div class="form-content">
       <div class="form-item">
         <p>
