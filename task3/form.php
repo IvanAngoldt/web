@@ -9,6 +9,7 @@
   <title>Form</title>
 </head>
 <body>
+  <span> <?php echo $errors ?></span>
   <form action="" method="POST">
     <div class="form-content">
       <div class="form-item">
