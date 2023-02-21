@@ -22,6 +22,12 @@ if (empty($_POST['email'])) {
   $errors = TRUE;
 }
 
+$errors = FALSE;
+if (empty($_POST['biography'])) {
+  print('Заполните биографию.<br/>');
+  $errors = TRUE;
+}
+
 if ($errors) {
   exit();
 }
@@ -35,10 +41,11 @@ $email = $_POST['email'];
 $year = $_POST['year'];
 $sex = $_POST['sex'];
 $limbs = $_POST['limbs'];
+$biography = $_POST['biography'];
 
 try {
-  $stmt = $db->prepare("INSERT INTO application (name, email, year, sex, limbs) VALUES ('$name', '$email', '$year', '$sex', '$limbs')");
-  $stmt -> execute(['name', 'email', 'year', 'sex', 'limbs']);
+  $stmt = $db->prepare("INSERT INTO application (name, email, year, sex, limbs, biography) VALUES ('$name', '$email', '$year', '$sex', '$limbs', '$biography')");
+  $stmt -> execute(['name', 'email', 'year', 'sex', 'limbs', 'biography']);
 }
 catch(PDOException $e){
   print('Error : ' . $e->getMessage());

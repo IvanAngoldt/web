@@ -42,7 +42,11 @@
     Четыре
   </label>
   </div>
-  <input class="input" type="submit" value="ok" />
+  <span>Напиши свою биография</span><br>
+  <div class="form_item">
+    <textarea name="biography"></textarea>
+  </div>
+  <input class="input" type="submit" value="Отправить" />
 </form>
 </body>
 </html>
