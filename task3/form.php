@@ -18,7 +18,7 @@
       </div>
       <div class="form-item">
         <p>
-          Имя
+          Имя123
         </p>
         <input class="line" name="name" />
       </div>
