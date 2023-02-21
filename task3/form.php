@@ -1,5 +1,4 @@
 <?php 
-  $name = $_POST['name'];
   if (empty($name)) {
     $errors = "Пустое имя!";
   }
