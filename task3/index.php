@@ -40,7 +40,7 @@ if (empty($name)) {
 } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
   print('
     <h1>
-      email заполнен неверно.
+      Корректно* заполните email.
     </h1>
   <br/>');
   $errors = TRUE;
