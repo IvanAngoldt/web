@@ -4,6 +4,7 @@ body {
     align-items: center;
     min-height: 98vh;
     background: #eceffc;
+    font-family: Montserrat;
 }
 
 form {
@@ -27,5 +28,5 @@ li {
 
 p {
     font-size: 20px;
-    font-family: Montserrat;
+    
 }
