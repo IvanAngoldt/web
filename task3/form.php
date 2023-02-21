@@ -9,7 +9,6 @@
   <title>Form</title>
 </head>
 <body>
-  <p id="message"></p>  
   <form action="" method="POST">
     <div class="form-content">
       <div class="form-item">

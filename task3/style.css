@@ -43,3 +43,7 @@ p {
   color: white;
   padding: 5px;
 }
+
+h1 {
+    z-index: 100;
+}
