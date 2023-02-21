@@ -39,4 +39,5 @@ p {
   background: transparent;
   border: none;
   border-bottom: 3px solid white;
+  outline: none;
 }
