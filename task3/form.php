@@ -9,9 +9,6 @@
   <title>Form</title>
 </head>
 <body>
-  <h1>
-    Форма
-  </h1> 
   <form action="" method="POST">
     <div class="form-content">
       <div class="form-item">
