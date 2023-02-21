@@ -8,7 +8,7 @@
   <title>Form</title>
 </head>
 <body>
-  <form class="form" action="" method="POST">
+  <form action="" method="POST">
     <div class="form-item">
       <p>
         Имя
@@ -76,7 +76,7 @@
         Биография:
       </p>
       <textarea name="biography"></textarea>
-    </div><br>
+    </div>
     <input type="submit" class="btn" value="ok" />
   </form>
 </body>
