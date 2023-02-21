@@ -32,6 +32,10 @@ p {
     margin-bottom: 5px;
 }
 
+h1 {
+    display: flex;
+}
+
 .big-text {
     margin-bottom: 0px;
 }
