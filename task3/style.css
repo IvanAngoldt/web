@@ -24,3 +24,7 @@ li {
     list-style-type: none;
     margin-bottom: 15px;
 }
+
+input.btn {
+    padding-top: 15px;
+}
