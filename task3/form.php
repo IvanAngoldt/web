@@ -77,7 +77,7 @@
         <p>
           Биография:
         </p>
-        <textarea name="biography" cols=24></textarea>
+        <textarea name="biography" cols=24 readonly></textarea>
       </div>
     </div>  
     <input type="submit" class="btn" value="ok" />
