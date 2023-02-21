@@ -4,7 +4,13 @@ header('Content-Type: text/html; charset=UTF-8');
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   if (!empty($_GET['save'])) {
-    print('<h1>Спасибо, результаты сохранены.</h1>');
+    print('
+    <div class = message>
+      <h1>
+        Спасибо, результаты сохранены.
+      </h1>
+     </div>'
+    );
   }
   include('form.php');
   exit();
