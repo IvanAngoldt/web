@@ -9,10 +9,10 @@
   <title>Form</title>
 </head>
 <body>
+  <div class="message">
+    123
+  </div> 
   <form action="" method="POST">
-    <div class="message">
-      123
-    </div> 
     <div class="form-content">
       <div class="form-item">
         <p>
