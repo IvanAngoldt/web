@@ -10,75 +10,77 @@
 </head>
 <body>
   <form action="" method="POST">
-    <div class="form-item">
-      <p>
-        Имя
-      </p>
-      <input name="name" />
-    </div>
-    <div class="form-item">
-      <p>
-        Email:
-      </p>
-      <input name="email" />
-    </div>
-    <div class="form-item">
-      <p>
-        Год:
-        <select name="year">
-          <?php 
-          for ($i = 2000; $i <= 2023; $i++) {
-            printf('<option value="%d">%d год</option>', $i, $i);
-          }
-          ?>
-        </select>
-      </p>
-    </div>
-    <div class="form-item">
-      <ul>
+    <div class="form-content">
+      <div class="form-item">
         <p>
-          Пол:
+          Имя
         </p>
-        <li>
-          <input type="radio" name="sex" value="male" checked>
-          <label>
-            Мужчина
-          </label>
-        </li>
-        <li>
-          <input type="radio" name="sex" value="female">
-          <label>
-            Женщина
-          </label>
-        </li>
-      </ul>
-    </div>
-    <div class="form-item">
-      <ul>
+        <input name="name" />
+      </div>
+      <div class="form-item">
         <p>
-          Конечностей:
+          Email:
         </p>
-        <li>
-          <input type="radio" name="limbs" value="3">
-            <label>
-              3
-            </label>
-        </li>
+        <input name="email" />
+      </div>
+      <div class="form-item">
+        <p>
+          Год:
+          <select name="year">
+            <?php 
+            for ($i = 2000; $i <= 2023; $i++) {
+              printf('<option value="%d">%d год</option>', $i, $i);
+            }
+            ?>
+          </select>
+        </p>
+      </div>
+      <div class="form-item">
+        <ul>
+          <p>
+            Пол:
+          </p>
           <li>
-          <input type="radio" name="limbs" value="4" checked>
+            <input type="radio" name="sex" value="male" checked>
             <label>
-              4
+              Мужчина
             </label>
           </li>
-      </ul>
-    </div>
-    <div class="form-item">
-      <p>
-        Биография:
-      </p>
-      <textarea name="biography"></textarea>
-    </div>
-    <input type="submit" class="btn" value="ok" />
+          <li>
+            <input type="radio" name="sex" value="female">
+            <label>
+              Женщина
+            </label>
+          </li>
+        </ul>
+      </div>
+      <div class="form-item">
+        <ul>
+          <p>
+            Конечностей:
+          </p>
+          <li>
+            <input type="radio" name="limbs" value="3">
+              <label>
+                3
+              </label>
+          </li>
+            <li>
+            <input type="radio" name="limbs" value="4" checked>
+              <label>
+                4
+              </label>
+            </li>
+        </ul>
+      </div>
+      <div class="form-item">
+        <p>
+          Биография:
+        </p>
+        <textarea name="biography"></textarea>
+      </div>
+      <input type="submit" class="btn" value="ok" />
+    </div>  
   </form>
 </body>
 </html>
