@@ -58,7 +58,9 @@
           </li>
       </ul>
     </div><br>
-    Биография:<textarea name="biography"></textarea><br>
+    <div class="form-item">
+      Биография:<textarea name="biography"></textarea>
+    </div><br>
     <input type="submit" value="ok" />
   </form>
 </body>
