@@ -15,13 +15,13 @@
         <p>
           Имя
         </p>
-        <input name="name" />
+        <input class="line" name="name" />
       </div>
       <div class="form-item">
         <p>
           Email:
         </p>
-        <input name="email" />
+        <input class="line" name="email" />
       </div>
       <div class="form-item">
         <p>

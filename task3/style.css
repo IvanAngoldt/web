@@ -55,6 +55,10 @@ textarea {
     padding-bottom: 15px;
 }
 
+.line {
+    width: 100%;
+}
+
 .form-content input {
   background: transparent;
   border: none;
