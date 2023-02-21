@@ -1,3 +1,7 @@
+<?php 
+  $errors = FALSE;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
