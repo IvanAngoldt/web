@@ -1,5 +1,5 @@
 <?php 
-  $errors = FALSE;
+  $errors = "VanAn";
 ?>
 
 <!DOCTYPE html>
