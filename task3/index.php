@@ -16,12 +16,6 @@ if (empty($_POST['name'])) {
   $errors = TRUE;
 }
 
-$errors = FALSE;
-if (empty($_POST['email'])) {
-  print('Заполните email.<br/>');
-  $errors = TRUE;
-}
-
 if ($errors) {
   exit();
 }
@@ -31,14 +25,11 @@ $pass = '5599036';
 $db = new PDO('mysql:host=localhost;dbname=u52855', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
 
 $name = $_POST['name'];
-$email = $_POST['email'];
 $year = $_POST['year'];
-$sex = $_POST['sex'];
-$limbs = $_POST['limbs'];
 
 try {
-  $stmt = $db->prepare("INSERT INTO application (name, email, year, sex, limbs) VALUES ('$name', '$email', '$year', '$sex', '$limbs')");
-  $stmt -> execute(['name', 'email', 'year', 'sex', 'limbs']);
+  $stmt = $db->prepare("INSERT INTO application (name, year) VALUES ('$name', '$year')");
+  $stmt -> execute(['name', 'year']);
 }
 catch(PDOException $e){
   print('Error : ' . $e->getMessage());
