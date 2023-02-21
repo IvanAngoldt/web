@@ -13,6 +13,9 @@
     Имя: <input name="name" />
   </div>
   <div class="form_item">
+  e-mail: <input name="email" />
+  </div>
+  <div class="form_item">
     Год: <select name="year">
       <?php 
       for ($i = 1922; $i <= 2022; $i++) {
