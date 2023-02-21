@@ -72,7 +72,7 @@
           </li>
             <li>
             <input type="radio" id="radioFour" name="limbs" value="4" checked>
-              <label for="radioThree">
+              <label for="radioFour">
                 4
               </label>
             </li>
