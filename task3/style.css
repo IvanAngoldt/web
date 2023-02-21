@@ -81,3 +81,7 @@ textarea {
 label {
     cursor: pointer;
 }
+
+.btn {
+    height: 20px;
+}
