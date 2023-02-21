@@ -1,5 +1,5 @@
 body {
-    display: flex;
+    width: 300px;
     align-items: center;
     min-height: 98vh;
     background: #eceffc;
