@@ -21,11 +21,11 @@
       Женщина
     </label>
 
-  Конечностей:<input type="radio" name="limb" value="3" checked>
+  Конечностей:<input type="radio" name="limbs" value="3" checked>
     <label>
       3
     </label>
-  <input type="radio" name="limb" value="4">
+  <input type="radio" name="limbs" value="4">
     <label>
       4
     </label>
