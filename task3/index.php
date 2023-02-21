@@ -16,6 +16,18 @@ if (empty($_POST['name'])) {
   $errors = TRUE;
 }
 
+$errors = FALSE;
+if (empty($_POST['email'])) {
+  print('Заполните email.<br/>');
+  $errors = TRUE;
+}
+
+$errors = FALSE;
+if (empty($_POST['email'])) {
+  print('Заполните биографию.<br/>');
+  $errors = TRUE;
+}
+
 if ($errors) {
   exit();
 }
