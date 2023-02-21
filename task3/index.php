@@ -22,9 +22,6 @@ if (empty($_POST['name'])) {
 } else if (empty($_POST['email'])) {
   print('Заполните email.<br/>');
   $errors = TRUE;
-} else if (!filter_var($_POST['name'], FILTER_VALIDATE_EMAIL)) {
-  print('email заполнен неверно.<br/>');
-  $errors = TRUE;
 } else if (empty($_POST['biography'])) {
   print('Заполните биографию.<br/>');
   $errors = TRUE;
