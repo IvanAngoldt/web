@@ -10,7 +10,6 @@
 </head>
 <body>
   <div class="message">
-    123
   </div> 
   <form action="" method="POST">
     <div class="form-content">
