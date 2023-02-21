@@ -25,8 +25,8 @@
       </select>
     </div><br>
     <div class="form-item">
-      Пол:
       <ul>
+        Пол:
         <li>
           <input type="radio" name="sex" value="male" checked>
           <label>
