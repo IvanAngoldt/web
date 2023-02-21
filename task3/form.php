@@ -88,7 +88,7 @@
         <textarea name="biography" cols=24 rows=4 maxlength=128></textarea>
       </div>
     </div>  
-    <input type="submit" value="Отправить" />
+    <input class="btn" type="submit" value="Отправить" />
   </form>
 </body>
 </html>
