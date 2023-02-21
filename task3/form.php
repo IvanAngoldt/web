@@ -1,5 +1,8 @@
 <?php 
-  $errors = "VanAn";
+  $name = $_POST['name'];
+  if (empty($name)) {
+    $errors = "Пустое имя!";
+  }
 ?>
 
 <!DOCTYPE html>
