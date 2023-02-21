@@ -15,12 +15,22 @@
   <div class="form_item">
     e-mail: <input name="email" />
   </div>
-  <div class="radio-button">
+  <div class="radio-class1">
+  <span>Укажи пол</span>
   <label><input type="radio" checked="checked" name="sex" value="male"/>
     Мужчина
   </label>
   <label><input type="radio" name="sex" value="female" />
     Женщина
+  </label>
+  </div>
+  <div class="radio-class2">
+  <span>Сколько у вас конечностей</span>
+  <label><input type="radio" checked="checked" name="limb" value="four"/>
+    Четыре
+  </label>
+  <label><input type="radio" name="limb" value="five" />
+    Пять
   </label>
   </div>
   <div class="form_item">
