@@ -13,7 +13,7 @@
       Имя:<input name="name" />
     <div><br>
     <div class="form-item">
-    Email:<input name="email" />
+      Email:<input name="email" />
     <div><br>
     Год:<select name="year">
       <?php 
