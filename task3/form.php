@@ -14,13 +14,13 @@
         Имя
       </p>
       <input name="name" />
-    </div><br>
+    </div>
     <div class="form-item">
       <p>
         Email:
       </p>
       <input name="email" />
-    </div><br>
+    </div>
     <div class="form-item">
       Год:<select name="year">
         <?php 
