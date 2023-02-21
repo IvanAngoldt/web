@@ -11,14 +11,6 @@
 <body>
   <form action="" method="POST">
     <div class="message">
-      <?php
-        if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-          if (!empty($_GET['save'])) {
-            print('Спасибо, результаты сохранены.');
-          }
-          exit();
-        }
-      ?>
     </div> 
     <div class="form-content">
       <div class="form-item">
