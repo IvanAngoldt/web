@@ -7,8 +7,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     print('
       <h1>
         Спасибо, результаты сохранены.
-      </h1>'
-    );
+      </h1>
+      ');
   }
   include('form.php');
   exit();
@@ -24,16 +24,32 @@ $biography = $_POST['biography'];
 $errors = FALSE;
 
 if (empty($name)) {
-  print('Заполните имя.<br/>');
+  print('
+    <h1>
+      Заполните имя.
+    </h1>
+  <br/>');
   $errors = TRUE;
 } else if (empty($email)) {
-  print('Заполните email.<br/>');
+  print('
+    <h1>
+      Заполните email.
+    </h1>
+  <br/>');
   $errors = TRUE;
 } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-  print('email заполнен неверно.<br/>');
+  print('
+    <h1>
+      email заполнен неверно.
+    </h1>
+  <br/>');
   $errors = TRUE;
 } else if (empty($biography)) {
-  print('Заполните биографию.<br/>');
+  print('
+    <h1>
+      Заполните биографию.
+    </h1>
+  <br/>');
   $errors = TRUE;
 }
 
