@@ -1,9 +1,3 @@
-<?php 
-  if (isset($_POST['submit'])) {
-    echo "click";
-  }
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +9,6 @@
   <title>Form</title>
 </head>
 <body>
-  <span> <?php echo $errors ?></span>
   <form action="" method="POST">
     <div class="form-content">
       <div class="form-item">
