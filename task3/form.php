@@ -30,7 +30,7 @@
       4
     </label>
 
-  Биография:<input name="biography" />
+  Биография:<textarea name="biography"></textarea>
 
   <input type="submit" value="ok" />
 
