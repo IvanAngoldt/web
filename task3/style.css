@@ -7,10 +7,8 @@ body {
 }
 
 form {
-    border: 4px double black;
-    padding: 10px;
-    width: 200px;
-    font-size: 15px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
 }
 
 ul {
