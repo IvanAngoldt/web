@@ -13,6 +13,11 @@
     <div class="form-content">
       <div class="form-item">
         <p>
+          Форма
+        </p>
+      </div>
+      <div class="form-item">
+        <p>
           Имя
         </p>
         <input class="line" name="name" />
