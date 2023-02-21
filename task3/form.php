@@ -15,12 +15,14 @@
   <div class="form_item">
     e-mail: <input name="email" />
   </div>
-  <label><input type="radio" checked="checked" name="sex" value="male"/>
-    Мужчина
-  </label>
-  <label><input type="radio" name="sex" value="female" />
-    Женщина
-  </label>
+  <div class="radio-button">
+    <label><input type="radio" checked="checked" name="sex" value="male"/>
+      Мужчина
+    </label>
+    <label><input type="radio" name="sex" value="female" />
+      Женщина
+    </label>
+  </div>
   <div class="form_item">
     Год: <select name="year">
       <?php 
