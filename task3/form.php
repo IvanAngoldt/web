@@ -78,7 +78,7 @@
           Биография:
         </p>
         <p class="small-text">
-          макс. 120 символов:
+          (макс. 120 символов)
         </p>
         <textarea name="biography" cols=24 rows=4 maxlength=130></textarea>
       </div>
