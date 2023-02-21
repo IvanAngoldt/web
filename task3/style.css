@@ -11,7 +11,7 @@ form {
     display: flex;
     flex-direction: column;
     padding: 50px 40px;
-    color: white;
+    color: rgb(240, 68, 68);
     background: rgba(0, 0, 0, 0.8);
     border-radius: 10px;
 }
