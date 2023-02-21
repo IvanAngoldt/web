@@ -11,5 +11,6 @@
     }
     ?>
   </select>
-  
+
+  <input type="submit" value="ok" />
 </form>
