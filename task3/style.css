@@ -76,3 +76,7 @@ textarea {
     opacity:0.9;
     cursor:pointer;
 }
+
+label {
+    cursor: pointer;
+}
