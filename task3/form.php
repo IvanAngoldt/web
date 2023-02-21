@@ -25,22 +25,22 @@
     </select>
   </div>
   <div class="radio-class1">
-  <span>Укажи пол</span><br>
-  <label><input type="radio" checked="checked" name="sex" value="male"/>
-    Мужчина
-  </label>
-  <label><input type="radio" name="sex" value="female" />
-    Женщина
-  </label>
+    <span>Укажи пол</span><br>
+    <label><input type="radio" checked="checked" name="sex" value="male"/>
+      Мужчина
+    </label>
+    <label><input type="radio" name="sex" value="female" />
+      Женщина
+    </label>
   </div>
   <div class="radio-class2">
-  <span>Сколько у вас конечностей</span><br>
-  <label><input type="radio" checked="checked" name="limb" value="3"/>
-    Три
-  </label>
-  <label><input type="radio" name="limb" value="4" />
-    Четыре
-  </label>
+    <span>Сколько у вас конечностей</span><br>
+    <label><input type="radio" checked="checked" name="limb" value="3"/>
+      Три
+    </label>
+    <label><input type="radio" name="limb" value="4" />
+      Четыре
+    </label>
   </div>
   <input class="input" type="submit" value="ok" />
 </form>
