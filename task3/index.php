@@ -44,8 +44,8 @@ $limbs = $_POST['limbs'];
 $biography = $_POST['biography'];
 
 try {
-  $stmt = $db->prepare("INSERT INTO application (name, email, year, sex, limbs, biography) VALUES ('$name', '$email', '$year', '$sex', '$limbs', '$biography')");
-  $stmt -> execute(['name', 'email', 'year', 'sex', 'limbs', 'biography']);
+  $stmt = $db->prepare("INSERT INTO application (name, email, year, sex, limbs, biography) VALUES ('$name', '$email', '$year', '$sex', '$limbs')");
+  $stmt -> execute(['name', 'email', 'year', 'sex', 'limbs']);
 }
 catch(PDOException $e){
   print('Error : ' . $e->getMessage());
