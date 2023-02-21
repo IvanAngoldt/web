@@ -12,9 +12,9 @@
   <form action="" method="POST">
     <div class="form-content">
       <div class="form-item">
-        <p>
+        <h1>
           Форма
-        </p>
+        </h1>
       </div>
       <div class="form-item">
         <p>
