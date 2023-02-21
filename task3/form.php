@@ -35,11 +35,11 @@
   </div>
   <div class="radio-class2">
   <span>Сколько у вас конечностей</span><br>
-  <label><input type="radio" checked="checked" name="limb" value="four"/>
-    Четыре
+  <label><input type="radio" checked="checked" name="limb" value="3"/>
+    Три
   </label>
-  <label><input type="radio" name="limb" value="five" />
-    Пять
+  <label><input type="radio" name="limb" value="4" />
+    Четыре
   </label>
   </div>
   <input class="input" type="submit" value="ok" />
