@@ -20,5 +20,14 @@
     <label>
       Женщина
     </label>
+
+  Конечностей:<input type="radio" name="limb" value="3" checked>
+    <label>
+      3
+    </label>
+  <input type="radio" name="limb" value="4">
+    <label>
+      4
+    </label>
   <input type="submit" value="ok" />
 </form>
