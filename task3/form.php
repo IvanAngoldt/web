@@ -12,7 +12,9 @@
     <div class="form-item">
       Имя:<input name="name" />
     <div><br>
-    Email:<input name="email" /><br>
+    <div class="form-item">
+    Email:<input name="email" />
+    <div><br>
     Год:<select name="year">
       <?php 
       for ($i = 1922; $i <= 2022; $i++) {
