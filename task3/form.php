@@ -18,7 +18,7 @@
     <div class="form-item">
       Год:<select name="year">
         <?php 
-        for ($i = 1922; $i <= 2022; $i++) {
+        for ($i = 2000; $i <= 2023; $i++) {
           printf('<option value="%d">%d год</option>', $i, $i);
         }
         ?>
