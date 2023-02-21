@@ -25,14 +25,21 @@
       </select>
     </div><br>
     <div class="form-item">
-      Пол:<input type="radio" name="sex" value="male" checked>
-        <label>
-          Мужчина
-        </label>
-      <input type="radio" name="sex" value="female">
-        <label>
-          Женщина
-        </label>
+      Пол:
+      <ul>
+        <li>
+          <input type="radio" name="sex" value="male" checked>
+          <label>
+            Мужчина
+          </label>
+        </li>
+        <li>
+          <input type="radio" name="sex" value="female">
+          <label>
+            Женщина
+          </label>
+        </li>
+      </ul>
     </div><br>
     Конечностей:<input type="radio" name="limbs" value="3">
       <label>
