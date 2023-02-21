@@ -7,5 +7,6 @@
     }
     ?>
   </select>
+  <textarea id="biography" class="biography" name="biography" ></textarea>
   <input type="submit" value="ok" />
 </form>
