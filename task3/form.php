@@ -30,7 +30,7 @@
       </div>
       <div class="form-item">
         <p>
-          Год:
+          Год рождения:
           <select name="year">
             <?php 
             for ($i = 2022; $i >= 1922; $i--) {
