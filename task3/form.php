@@ -70,9 +70,12 @@
             </label>
           </li>
       </ul>
-    </div><br>
+    </div>
     <div class="form-item">
-      Биография:<textarea name="biography"></textarea>
+      <p>
+        Биография:
+      </p>
+      <textarea name="biography"></textarea>
     </div><br>
     <input type="submit" value="ok" />
   </form>
