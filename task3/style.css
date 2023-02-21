@@ -43,6 +43,7 @@ h1 {
 .small-text {
     font-size: 10px;
     margin-top: 0px;
+    padding-bottom: 10px;
 }
 
 textarea {
