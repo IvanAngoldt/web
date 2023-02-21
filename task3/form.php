@@ -21,12 +21,12 @@
       Женщина
     </label>
 
-  Конечности:<input type="radio" id="limbChoice1" name="limb" value="3" checked>
-    <label for="limbChoice1">
+  Конечности:<input type="radio" name="limb" value="3" checked>
+    <label>
       3
     </label>
-  <input type="radio" id="limbChoice2" name="limb" value="4">
-    <label for="sexChoice2">
+  <input type="radio" name="limb" value="4">
+    <label>
       4
     </label>  
   <input type="submit" value="ok" />
