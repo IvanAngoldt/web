@@ -49,6 +49,7 @@ textarea {
     resize: none;
     background: transparent;
     outline: none;
+    color: white;
 }
 
 .form-content {
