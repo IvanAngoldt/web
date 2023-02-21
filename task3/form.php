@@ -41,14 +41,23 @@
         </li>
       </ul>
     </div><br>
-    Конечностей:<input type="radio" name="limbs" value="3">
-      <label>
-        3
-      </label>
-    <input type="radio" name="limbs" value="4" checked>
-      <label>
-        4
-      </label><br>
+    <div class="form-item">
+      <ul>
+        Конечностей:
+        <li>
+          <input type="radio" name="limbs" value="3">
+            <label>
+              3
+            </label>
+        </li>
+          <li>
+          <input type="radio" name="limbs" value="4" checked>
+            <label>
+              4
+            </label>
+          </li>
+      </ul>
+    </div><br>
     Биография:<textarea name="biography"></textarea><br>
     <input type="submit" value="ok" />
   </form>
