@@ -1,6 +1,6 @@
 <?php 
-  if (empty($name)) {
-    $errors = "Пустое имя!";
+  if (isset($_POST['submit'])) {
+    echo "click";
   }
 ?>
 
@@ -95,7 +95,7 @@
         <textarea name="biography" cols=24 rows=4 maxlength=128></textarea>
       </div>
     </div>  
-    <input class="btn" type="submit" value="Отправить" />
+    <input class="btn" type="submit" name="submit" value="Отправить" />
   </form>
 </body>
 </html>
