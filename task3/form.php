@@ -10,17 +10,19 @@
 </head>
 <body>
   <form action="" method="POST">
+    <div class="form-head">
+        <h1>Форма</h1>
+    </div>
     <div class="form-content">
       <div class="form-item">
-        <h1>Форма</h1>
-      </div>
-      <div class="form-item">
-        <p class="name">Имя</p>
-        <input class="line" name="name" />
-      </div>
-      <div class="form-item">
-        <p class="email">Email:</p>
-        <input type="email" class="line" name="email" />
+        <div class="group1">
+          <input type="text" class="line" name="name" required>
+          <label class="labelText" for="name">Имя</label>
+        </div>
+        <div class="group2">
+          <input type="text" class="line" name="email" required>
+          <label class="labelText" for="name">Email</label>
+        </div>
       </div>
       <div class="form-item">
         <div class="date">

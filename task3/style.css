@@ -18,8 +18,62 @@ form {
 }
 
 .form-item {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
+
+.form-head {
+    margin-bottom: 40px;
+}
+
+/* name & email animated inputs */
+
+.group1, .group2 {
+    position: relative; 
+}
+
+.group1 {
+    margin-bottom: 40px;
+}
+
+.line {
+    width: 285px;
+    height: 30px;
+    font-size: 16px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+    border-radius: 0px;
+    color: white;
+    padding: 0px;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    display: block;
+}
+
+.line:focus {
+    outline: none;
+}
+
+.labelText {
+    font-size: 18px;
+    font-weight: normal;
+    color: #969696;
+    position: absolute;
+    pointer-events: none;
+    top: 0px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+.line:focus ~ .labelText,
+.line:valid ~ .labelText {
+    top: -30px;
+    font-size: 20px;
+    color: white;
+}
+
+/* end */
 
 h1 {
     text-align: center;
@@ -34,21 +88,6 @@ p {
 
 .name, .email {
     margin-bottom: 0px;
-}
-
-.line {
-    width: 285px;
-    height: 30px;
-    font-size: medium;
-    background: transparent;
-    border: 0px;
-    border-bottom: 2px solid white;
-    border-radius: 0px;
-    outline: none;
-    color: white;
-    padding: 0px;
-    padding-left: 5px;
-    padding-bottom: 3px;  
 }
 
 .date {

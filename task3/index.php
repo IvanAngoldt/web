@@ -71,7 +71,7 @@ if (empty($name)) {
 } else if (empty($biography)) {
   print('
     <h1>
-      Заполните биографию.
+      Расскажи о себе что-нибудь.
     </h1>
   <br/>');
   $errors = TRUE;
