@@ -17,6 +17,49 @@ form {
     border-radius: 10px;
 }
 
+.form-item {
+    margin-bottom: 15px;
+}
+
+h1 {
+    text-align: center;
+    margin: 0px;
+}
+
+p {
+    font-size: 20px;
+    margin: 0px;
+    margin-bottom: 10px;
+}
+
+.name, .email {
+    margin-bottom: 0px;
+}
+
+.line {
+    width: 285px;
+    height: 30px;
+    font-size: medium;
+    background: transparent;
+    border: 0px;
+    border-bottom: 2px solid white;
+    border-radius: 0px;
+    outline: none;
+    color: white;
+    padding: 0px;
+    padding-left: 5px;
+    padding-bottom: 3px;  
+}
+
+.date {
+    display: flex;
+    font-size: 20px;
+}
+
+.date span {
+    margin-right: 20px;
+}
+
 ul {
     margin: 0;
     padding-left: 0;
@@ -27,15 +70,8 @@ li {
     margin-bottom: 10px;
 }
 
-p {
-    font-size: 20px;
-    margin: 0px;
-    margin-bottom: 10px;
-}
-
-h1 {
-    text-align: center;
-    margin: 0px;
+label {
+    cursor: pointer;
 }
 
 .big-text {
@@ -44,7 +80,6 @@ h1 {
 
 .small-text {
     font-size: 10px;
-    margin-top: 0px;
 }
 
 textarea {
@@ -52,32 +87,9 @@ textarea {
     background: transparent;
     outline: none;
     color: white;
-    width: 278px;
+    width: 276px;
     padding-left: 5px;
     padding-right: 5px;
-}
-
-.line {
-    width: 285px;
-    height: 30px;
-    font-size: medium;
-
-}
-
-.form-content input {
-  background: transparent;
-  border: 0px;
-  border-bottom: 2px solid white;
-  border-radius: 0px;
-  outline: none;
-  color: white;
-  padding: 0px;
-  padding-left: 5px;
-  padding-bottom: 3px;  
-}
-
-label {
-    cursor: pointer;
 }
 
 .contract {
@@ -87,12 +99,4 @@ label {
 .btn {
     width: 100%;
     height: 40px;
-}
-
-.form-item {
-    margin-bottom: 15px;
-}
-
-.name, .email {
-    margin-bottom: 0px;
 }

@@ -23,20 +23,20 @@
         <input class="line" name="email" />
       </div>
       <div class="form-item">
-        <p>
-          Год рождения:
+        <div class="date">
+          <span>Год рождения:</span>
           <select name="year">
             <?php 
               for ($i = 2022; $i >= 1922; $i--) {
                 printf('<option value="%d">%d год</option>', $i, $i);
               }
             ?>
-            </select>
-          </p>
+          </select>
+        </div>
       </div>
       <div class="form-item">
+        <p>Пол:</p>
         <ul>
-          <p>Пол:</p>
           <li>
             <input type="radio" id="radioMale" name="sex" value="male" checked>
             <label for="radioMale">Мужчина</label>
@@ -48,8 +48,8 @@
         </ul>
       </div>
       <div class="form-item">
+        <p>Правша или левша:</p>
         <ul>
-          <p>Правша или левша:</p>
           <li>
             <input type="radio" id="radioRight" name="hand" value="right" checked>
             <label for="radioRight">Правша</label>
