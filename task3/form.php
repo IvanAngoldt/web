@@ -15,22 +15,24 @@
         <h1>Форма</h1>
       </div>
       <div class="form-item">
-        <p>Имя</p>
+        <p class="name">Имя</p>
         <input class="line" name="name" />
       </div>
       <div class="form-item">
-        <p>Email:</p>
+        <p class="email">Email:</p>
         <input class="line" name="email" />
       </div>
       <div class="form-item">
-        Год рождения:
-        <select name="year">
-          <?php 
-            for ($i = 2022; $i >= 1922; $i--) {
-              printf('<option value="%d">%d год</option>', $i, $i);
-            }
-          ?>
-          </select>
+        <p>
+          Год рождения:
+          <select name="year">
+            <?php 
+              for ($i = 2022; $i >= 1922; $i--) {
+                printf('<option value="%d">%d год</option>', $i, $i);
+              }
+            ?>
+            </select>
+          </p>
       </div>
       <div class="form-item">
         <ul>
