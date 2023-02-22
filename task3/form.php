@@ -12,7 +12,7 @@
   <form action="" method="POST">
     <div class="form-content">
       <div class="form-item">
-        <h1 class="chzh">Форма</h1>
+        <h1>Форма</h1>
       </div>
       <div class="form-item">
         <p>Имя</p>
