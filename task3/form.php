@@ -20,7 +20,7 @@
       </div>
       <div class="form-item">
         <p class="email">Email:</p>
-        <input class="line" name="email" />
+        <input type="email" class="line" name="email" />
       </div>
       <div class="form-item">
         <div class="date">
