@@ -68,6 +68,7 @@ textarea {
   background: transparent;
   border: 0px;
   border-bottom: 3px solid white;
+  border-radius: 0px;
   outline: none;
   color: white;
   padding: 0px;
