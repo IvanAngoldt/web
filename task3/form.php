@@ -16,11 +16,11 @@
     <div class="form-content">
       <div class="form-item">
         <div class="group1">
-          <input class="line" name="name" required>
+          <input class="line" name="name">
           <label class="labelText" for="name">Имя</label>
         </div>
         <div class="group2">
-          <input class="line" name="email" required>
+          <input class="line" name="email">
           <label class="labelText" for="name">Email</label>
         </div>
       </div>
