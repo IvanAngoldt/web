@@ -66,6 +66,7 @@ textarea {
 
 .form-content input {
   background: transparent;
+  border: 0px;
   border-bottom: 3px solid white;
   border-radius: 0px;
   outline: none;
