@@ -12,76 +12,54 @@
   <form action="" method="POST">
     <div class="form-content">
       <div class="form-item">
-        <h1>
-          Форма
-        </h1>
+        <h1>Форма123</h1>
       </div>
       <div class="form-item">
-        <p>
-          Имя
-        </p>
+        <p>Имя</p>
         <input class="line" name="name" />
       </div>
       <div class="form-item">
-        <p>
-          Email:
-        </p>
+        <p>Email:</p>
         <input class="line" name="email" />
       </div>
       <div class="form-item">
-        <p>
-          Год рождения:
-          <select name="year">
-            <?php 
+        Год рождения:
+        <select name="year">
+          <?php 
             for ($i = 2022; $i >= 1922; $i--) {
               printf('<option value="%d">%d год</option>', $i, $i);
             }
-            ?>
+          ?>
           </select>
-        </p>
       </div>
       <div class="form-item">
         <ul>
-          <p>
-            Пол:
-          </p>
+          <p>Пол:</p>
           <li>
             <input type="radio" id="radioMale" name="sex" value="male" checked>
-            <label for="radioMale">
-              Мужчина
-            </label>
+            <label for="radioMale">Мужчина</label>
           </li>
           <li>
             <input type="radio" id="radioFemale" name="sex" value="female">
-            <label for="radioFemale">
-              Женщина
-            </label>
+            <label for="radioFemale">Женщина</label>
           </li>
         </ul>
       </div>
       <div class="form-item">
         <ul>
-          <p>
-            Правша или левша:
-          </p>
+          <p>Правша или левша:</p>
           <li>
             <input type="radio" id="radioRight" name="hand" value="right" checked>
-              <label for="radioRight">
-                Правша
-              </label>
+            <label for="radioRight">Правша</label>
           </li>
-            <li>
+          <li>
             <input type="radio" id="radioLeft" name="hand" value="left">
-              <label for="radioLeft">
-                Левша
-              </label>
-            </li>
+            <label for="radioLeft">Левша</label>
+          </li>
         </ul>
       </div>
       <div class="form-item">
-        <p>
-          Выбери сверхспособности:
-        </p>
+        <p>Выбери сверхспособности:</p>
         <ul>
           <li>
             <input type="checkbox" id="god" name="god">
@@ -98,12 +76,8 @@
         </ul> 
       </div>
       <div class="form-item">
-        <p class="big-text">
-          Расскажи о себе:
-        </p>
-        <p class="small-text">
-          (макс. 128 символов)
-        </p>
+        <p class="big-text">Расскажи о себе:</p>
+        <p class="small-text">(макс. 128 символов)</p>
         <textarea name="biography" cols=24 rows=4 maxlength=128></textarea>
       </div>
     </div>  
