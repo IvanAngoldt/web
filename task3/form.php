@@ -62,25 +62,44 @@
       <div class="form-item">
         <ul>
           <p>
-            Конечностей:
+            Правша или левша:
           </p>
           <li>
-            <input type="radio" id="radioThree" name="limbs" value="3">
-              <label for="radioThree">
-                3
+            <input type="radio" id="radioRight" name="hand" value="right" checked>
+              <label for="radioRight">
+                Правша
               </label>
           </li>
             <li>
-            <input type="radio" id="radioFour" name="limbs" value="4" checked>
-              <label for="radioFour">
-                4
+            <input type="radio" id="radioLeft" name="hand" value="left">
+              <label for="radioLeft">
+                Левша
               </label>
             </li>
         </ul>
       </div>
       <div class="form-item">
+        <p>
+          Выбери сверхспособности:
+        </p>
+        <ul>
+          <li>
+            <input type="checkbox" id="god" name="god">
+            <label for="god">бессмертие</label>
+          </li>
+          <li>
+            <input type="checkbox" id="noclip" name="noclip">
+            <label for="noclip">прохождение сквозь стены</label>
+          </li>
+          <li>
+            <input type="checkbox" id="levitation" name="levitation">
+            <label for="levitation">левитация</label>
+          </li>
+        </ul> 
+      </div>
+      <div class="form-item">
         <p class="big-text">
-          Биография:
+          Расскажи о себе:
         </p>
         <p class="small-text">
           (макс. 128 символов)
@@ -88,7 +107,13 @@
         <textarea name="biography" cols=24 rows=4 maxlength=128></textarea>
       </div>
     </div>  
-    <input class="btn" type="submit" name="submit" value="Отправить" />
+    <div class="send">
+      <div class="contract">
+        <input type="checkbox" id="checkboxContract" name="checkboxContract">
+        <label for="checkboxContract">С контрактом ознакомлен</label>
+      </div>
+      <input class="btn" type="submit" name="submit" value="Отправить" />
+    </div>
   </form>
 </body>
 </html>
