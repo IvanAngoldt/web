@@ -30,10 +30,9 @@ caption {
 }
 
 
-@media (max-width: 540px) {
+@media (max-width: 660px) {
     table {
         scale: 0.6;
-        margin-left: 65px;
         margin-bottom: 50px;
     }
 }
