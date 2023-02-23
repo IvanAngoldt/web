@@ -1,0 +1,29 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 98vh;
+    font-size: large;
+    background: #eceffc;
+    font-family: Montserrat;
+}
+
+table {
+    width: 300px; /* Ширина таблицы */
+    border-collapse: collapse; /* Убираем двойные линии между ячейками */
+    margin-bottom: 100px;
+}
+
+td, th {
+    padding: 3px; /* Поля вокруг содержимого таблицы */
+    border: 1px solid black; /* Параметры рамки */
+}
+
+th {
+    background: #b0e0e6; /* Цвет фона */
+}
+
+caption {
+    padding: 10px;
+}
