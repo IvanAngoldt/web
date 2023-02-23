@@ -3,11 +3,6 @@
     header('Content-Type: text/html; charset=UTF-8');
 
     if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-        if (!empty($_GET['deleted'])) {
-            print('
-                Таблицы очищены.
-            ');
-        }
         include('truncate.php');
     exit();
     }
