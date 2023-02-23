@@ -3,7 +3,6 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    min-height: 98vh;
     font-size: large;
     background: #eceffc;
     font-family: Montserrat;
@@ -32,7 +31,7 @@ caption {
 
 @media (max-width: 660px) {
     table {
-        scale: 0.6;
-        margin-bottom: 50px;
+        scale: 0.5;
+        margin-bottom: 20px;
     }
 }
