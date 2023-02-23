@@ -9,10 +9,11 @@ body {
     font-family: Montserrat;
 }
 
-table {
-    width: 300px; /* Ширина таблицы */
+table { 
     border-collapse: collapse; /* Убираем двойные линии между ячейками */
     margin-bottom: 100px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 td, th {
@@ -26,4 +27,13 @@ th {
 
 caption {
     padding: 10px;
+}
+
+
+@media (max-width: 540px) {
+    table {
+        scale: 0.6;
+        margin-left: 65px;
+        margin-bottom: 50px;
+    }
 }
