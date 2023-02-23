@@ -66,5 +66,8 @@ $result2 = mysqli_query($induction, "SELECT * FROM `abilities`");
     }
     ?>
   </table>
+  <form action="truncate.php" method="POST">
+     <input name="myActionName" type="submit" value="Очистить данные" />
+  </form>
 </body>
 </html>
