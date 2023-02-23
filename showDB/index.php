@@ -18,37 +18,33 @@ $result2 = mysqli_query($induction, "SELECT * FROM `abilities`");
   <title>Database u52855</title>
 </head>
 <body>
-  <div class="content">
-    <table>
-      <caption>Данные из таблицы application</caption>
-      <tr> 
-        <th>&nbsp;</th>
-        <th>Имя</th>
-        <th>email</th>
-        <th>Год</th>
-        <th>Пол</th>
-        <th>Преобладающая рука</th>
-        <th>Биография</th>
-      </tr>
-      <?php
-      while ($form = mysqli_fetch_assoc($result1)) {
-        echo "
-          <tr>
-
-            <td>"; echo $form['id']; echo "</td>
-            <td>"; echo $form['name']; echo "</td>
-            <td>"; echo $form['email']; echo "</td>
-            <td>"; echo $form['year']; echo "</td>
-            <td>"; echo $form['sex']; echo "</td>
-            <td>"; echo $form['hand']; echo "</td>
-            <td>"; echo $form['biography']; echo "</td>
-          </tr>
-        ";
-      }
-      ?>
-    </table>
-  </div>
-
+  <table>
+    <caption>Данные из таблицы application</caption>
+    <tr> 
+      <th>&nbsp;</th>
+      <th>Имя</th>
+      <th>email</th>
+      <th>Год</th>
+      <th>Пол</th>
+      <th>Преобладающая рука</th>
+      <th>Биография</th>
+    </tr>
+    <?php
+    while ($form = mysqli_fetch_assoc($result1)) {
+      echo "
+        <tr>
+          <td>"; echo $form['id']; echo "</td>
+          <td>"; echo $form['name']; echo "</td>
+          <td>"; echo $form['email']; echo "</td>
+          <td>"; echo $form['year']; echo "</td>
+          <td>"; echo $form['sex']; echo "</td>
+          <td>"; echo $form['hand']; echo "</td>
+          <td>"; echo $form['biography']; echo "</td>
+        </tr>
+      ";
+    }
+    ?>
+  </table>
   <table>
     <caption>Данные из таблицы abilities</caption>
     <tr> 
