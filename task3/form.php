@@ -9,7 +9,6 @@
   <title>Form</title>
 </head>
 <body>
-  <audio src="music.mp3 autoplay"></audio>
   <form action="" method="POST">
     <div class="form-head">
         <h1>Форма</h1>
