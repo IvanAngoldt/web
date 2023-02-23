@@ -54,6 +54,13 @@ if (empty($name)) {
     </h1>
   <br/>');
   $errors = TRUE;
+} else if ((2023 - $year) < 14) {
+  print('
+    <h1>
+      Извините, вам должно быть 14 лет.
+    </h1>
+  <br/>');
+  $errors = TRUE;
 } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
   print('
     <h1>
