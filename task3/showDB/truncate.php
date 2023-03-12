@@ -36,7 +36,7 @@
     while ($form = mysqli_fetch_assoc($result1)) {
       echo "
         <tr>
-          <td>"; echo $form['id']; echo "</td>
+          <td>"; echo $form['application_id']; echo "</td>
           <td>"; echo $form['name']; echo "</td>
           <td>"; echo $form['email']; echo "</td>
           <td>"; echo $form['year']; echo "</td>
@@ -52,18 +52,16 @@
     <caption>Данные из таблицы abilities</caption>
     <tr> 
       <th>&nbsp;</th>
-      <th>Бессмертие</th>
-      <th>Прохождение сквозь стены</th>
-      <th>Левитация</th>
+      <th>id отправителя</th>
+      <th>суперсила</th>
     </tr>
     <?php
     while ($form = mysqli_fetch_assoc($result2)) {
       echo "
         <tr>
-          <td>"; echo $form['id']; echo "</td>
-          <td>"; echo $form['god']; echo "</td>
-          <td>"; echo $form['noclip']; echo "</td>
-          <td>"; echo $form['levitation']; echo "</td>
+          <td>"; echo $form['abilities_id']; echo "</td>
+          <td>"; echo $form['application_id']; echo "</td>
+          <td>"; $form['superpower_id'] == 1 ? print "бессмертие" : ($form['superpower_id'] == 2 ? print "прохождение сквозь стены" : print "левитация") ; echo "</td>
         </tr>
       ";
     }
