@@ -40,6 +40,13 @@ if (empty($name)) {
     </h1>
   <br/>');
   $errors = TRUE;
+} else if (!is_numeric($year)) {
+  print('
+    <h1>
+      Неправильный формат ввода года.
+    </h1>
+  <br/>');
+  $errors = TRUE;
 } else if ((2023 - $year) < 14) {
   print('
     <h1>
@@ -65,6 +72,13 @@ if (empty($name)) {
   print('
     <h1>
       Расскажи о себе что-нибудь.
+    </h1>
+  <br/>');
+  $errors = TRUE;
+} else if (!preg_match('/[А-Яа-я]/iu', $biography)) {
+  print('
+    <h1>
+      Недопустимый формат ввода биографии.
     </h1>
   <br/>');
   $errors = TRUE;
