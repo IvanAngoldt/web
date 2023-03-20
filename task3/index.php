@@ -24,6 +24,11 @@ if(isset($_POST["abilities"]))
 $biography = $_POST['biography'];
 $checkboxContract = isset($_POST['checkboxContract']);
 
+$filtred = array_filter($abilities, 
+  function($value) {
+    return($value == 1 || $value == 2 || $value == 3);
+  }
+);
 $errors = FALSE;
 
 if (empty($name)) {
@@ -68,6 +73,13 @@ if (empty($name)) {
     </h1>
   <br/>');
   $errors = TRUE;
+} else if (count($filtred) != count($abilities)) {
+  print('
+    <h1>
+      Выбрана неизвестная сверхспособность.
+    </h1>
+  <br/>');
+  $errors = TRUE;
 } else if (empty($biography)) {
   print('
     <h1>
@@ -75,7 +87,7 @@ if (empty($name)) {
     </h1>
   <br/>');
   $errors = TRUE;
-} else if (!preg_match('/[А-Яа-я]/iu', $biography)) {
+} else if (!preg_match('/[А-Яа-я\s\.,]/iu', $biography)) {
   print('
     <h1>
       Недопустимый формат ввода биографии.
