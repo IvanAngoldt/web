@@ -86,8 +86,8 @@ $pass = '5599036';
 $db = new PDO('mysql:host=localhost;dbname=u52855', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
 
 try {
-  $stmt = $db->prepare("INSERT INTO application (name, email, year, sex, hand, biography) VALUES ('$name', '$email', '$year', '$sex', '$hand', '$biography')");
-  $stmt->execute(['name', 'email', 'year', 'sex', 'hand', 'biography']);
+  $stmt = $db->prepare("INSERT INTO application (name, email, year, sex, hand, biography) VALUES (?, ?, ?, ?, ?, ?)");
+  $stmt->execute([$name, $email, $year, $sex, $hand, $biography]);
   $application_id = mysqli_fetch_assoc(mysqli_query(mysqli_connect("localhost", $user, $pass, "u52855"), "SELECT MAX(application_id) AS application_id FROM `abilities`"))['application_id'] + 1;
   foreach ($abilities as $superpower_id) {
     $stmt = $db->prepare("INSERT INTO abilities (application_id, superpower_id) VALUES ('$application_id', '$superpower_id')");
