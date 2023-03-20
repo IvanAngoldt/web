@@ -87,7 +87,7 @@ if (empty($name)) {
     </h1>
   <br/>');
   $errors = TRUE;
-} else if (!preg_match('/[А-Яа-я\s\.,]/iu', $biography)) {
+} else if (!preg_match('/^[\p{Cyrillic}\d\s,/!?-]+$/u', $biography)) {
   print('
     <h1>
       Недопустимый формат ввода биографии.
