@@ -40,6 +40,13 @@ if (empty($name)) {
     </h1>
   <br/>');
   $errors = TRUE;
+} else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+  print('
+    <h1>
+      Корректно* заполните email.
+    </h1>
+  <br/>');
+  $errors = TRUE;
 } else if (!is_numeric($year)) {
   print('
     <h1>
@@ -58,13 +65,6 @@ if (empty($name)) {
   print('
     <h1>
       Выберите хотя бы одну сверхспособность.
-    </h1>
-  <br/>');
-  $errors = TRUE;
-} else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-  print('
-    <h1>
-      Корректно* заполните email.
     </h1>
   <br/>');
   $errors = TRUE;
@@ -102,10 +102,10 @@ $db = new PDO('mysql:host=localhost;dbname=u52855', $user, $pass, array(PDO::ATT
 try {
   $stmt = $db->prepare("INSERT INTO application (name, email, year, sex, hand, biography) VALUES (?, ?, ?, ?, ?, ?)");
   $stmt->execute([$name, $email, $year, $sex, $hand, $biography]);
-  $application_id = mysqli_fetch_assoc(mysqli_query(mysqli_connect("localhost", $user, $pass, "u52855"), "SELECT MAX(application_id) AS application_id FROM `abilities`"))['application_id'] + 1;
+  $application_id = $db->lastInsertId();
+  $stmt = $db->prepare("INSERT INTO abilities (application_id, superpower_id) VALUES (?, ?)");
   foreach ($abilities as $superpower_id) {
-    $stmt = $db->prepare("INSERT INTO abilities (application_id, superpower_id) VALUES ('$application_id', '$superpower_id')");
-    $stmt->execute(['application_id', 'superpower_id']);
+    $stmt->execute([$application_id, $superpower_id]);
   }
 } catch (PDOException $e) {
   print('Error : ' . $e->getMessage());
