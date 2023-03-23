@@ -21,7 +21,7 @@ $sex = $_POST['sex'];
 $hand = $_POST['hand'];
 if(isset($_POST["abilities"])) {
   $abilities = $_POST["abilities"];
-  $filtred = array_filter($abilities, 
+  $filtred_abilities = array_filter($abilities, 
   function($value) {
     return($value == 1 || $value == 2 || $value == 3);
   }
@@ -29,7 +29,6 @@ if(isset($_POST["abilities"])) {
 }
 $biography = $_POST['biography'];
 $checkboxContract = isset($_POST['checkboxContract']);
-
 
 $errors = FALSE;
 
@@ -40,7 +39,9 @@ if (empty($name)) {
     </h1>
   <br/>');
   $errors = TRUE;
-} else if (empty($email)) {
+}
+
+if (empty($email)) {
   print('
     <h1>
       Заполните email.
@@ -54,7 +55,9 @@ if (empty($name)) {
     </h1>
   <br/>');
   $errors = TRUE;
-} else if (!is_numeric($year)) {
+}
+
+if (!is_numeric($year)) {
   print('
     <h1>
       Неправильный формат ввода года.
@@ -68,21 +71,43 @@ if (empty($name)) {
     </h1>
   <br/>');
   $errors = TRUE;
-} else if (empty($abilities)) {
+}
+
+if ($sex != 'male' && $sex != 'female') {
+  print('
+    <h1>
+      Выбран неизвестный пол.
+    </h1>
+  <br/>');
+  $errors = TRUE;
+}
+
+if ($hand != 'right' && $hand != 'left') {
+  print('
+    <h1>
+      Выбрана неизвестная рука.
+    </h1>
+  <br/>');
+  $errors = TRUE;
+}
+
+if (empty($abilities)) {
   print('
     <h1>
       Выберите хотя бы одну сверхспособность.
     </h1>
   <br/>');
   $errors = TRUE;
-} else if (count($filtred) != count($abilities)) {
+} else if (count($filtred_abilities) != count($abilities)) {
   print('
     <h1>
       Выбрана неизвестная сверхспособность.
     </h1>
   <br/>');
   $errors = TRUE;
-} else if (empty($biography)) {
+}
+
+if (empty($biography)) {
   print('
     <h1>
       Расскажи о себе что-нибудь.
@@ -96,7 +121,9 @@ if (empty($name)) {
     </h1>
   <br/>');
   $errors = TRUE;
-} else if ($checkboxContract == '') {
+} 
+
+if ($checkboxContract == '') {
   print('
     <h1>
       Ознакомьтесь с контрактом.

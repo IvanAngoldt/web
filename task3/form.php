@@ -81,7 +81,7 @@
       </div>
       <div class="form-item">
         <p class="big-text">Расскажи о себе:</p>
-        <p class="small-text">(макс. 128 символов)</p>
+        <p class="small-text">(макс. 128 символов, кириллица)</p>
         <textarea name="biography" cols=24 rows=4 maxlength=128 spellcheck="false"></textarea>
       </div>
     </div>  
