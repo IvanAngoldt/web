@@ -26,57 +26,39 @@ form {
     margin-bottom: 40px;
 }
 
-/* name & email animated inputs */
 
-.group1, .group2 {
-    position: relative; 
-}
+    .line {
+        width: 285px;
+        height: 30px;
+        font-size: 16px;
+        background: transparent;
+        border: none;
+        border-bottom: 2px solid white;
+        border-radius: 0px;
+        color: white;
+        padding: 0px;
+        padding-left: 5px;
+        padding-bottom: 5px;
+        display: block;
+        outline: none;
+    }
 
-.group1 {
-    margin-bottom: 40px;
-}
+    .line:focus {
+        outline: none;
+    }
 
-.line {
-    width: 285px;
-    height: 30px;
-    font-size: 16px;
-    background: transparent;
-    border: none;
-    border-bottom: 2px solid white;
-    border-radius: 0px;
-    color: white;
-    padding: 0px;
-    padding-left: 5px;
-    padding-bottom: 5px;
-    display: block;
-}
-
-.line:focus {
-    outline: none;
-}
-
-.labelText {
-    font-size: 18px;
-    font-weight: normal;
-    color: #969696;
-    position: absolute;
-    pointer-events: none;
-    top: 5px;
-    left: 5px;
-    transition: 0.2s ease all;
-    -moz-transition: 0.2s ease all;
-    -webkit-transition: 0.2s ease all;
-}
-
-.line:focus ~ .labelText,
-.line:valid ~ .labelText {
-    left: 0px;
-    top: -30px;
-    font-size: 20px;
-    color: white;
-}
-
-/* end */
+    .labelText {
+        font-size: 18px;
+        font-weight: normal;
+        color: #969696;
+        position: absolute;
+        pointer-events: none;
+        top: 5px;
+        left: 5px;
+        transition: 0.2s ease all;
+        -moz-transition: 0.2s ease all;
+        -webkit-transition: 0.2s ease all;
+    }
 
 h1 {
     text-align: center;
@@ -96,6 +78,7 @@ p {
 .date {
     display: flex;
     font-size: 20px;
+    margin-bottom: 10px;
 }
 
 .date span {
@@ -167,5 +150,16 @@ select {
 }
 
 .error {
-    border: 2px solid red;
+    color: red;
+}
+
+.msg {
+    margin-bottom: 10px;
+    font-size: 15px;
+    color: rgb(231, 130, 130);
+}
+
+.good {
+    font-size: 25px;
+    margin-bottom: 20px;
 }

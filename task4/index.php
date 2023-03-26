@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   $messages = array();
   if (!empty($_COOKIE['save'])) {
       setcookie('save', '', 100000);
-      $messages[] = 'Спасибо, результаты сохранены.';
+      $messages['gucci'] = '<div class="good">Спасибо, результаты сохранены</div>';
   }
   $errors = array();
   $errors['name'] = !empty($_COOKIE['name_error']);
@@ -14,8 +14,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   $errors['email2'] = !empty($_COOKIE['email_error2']);
   $errors['year1'] = !empty($_COOKIE['year_error1']);
   $errors['year2'] = !empty($_COOKIE['year_error2']);
-  $errors['sex'] = !empty($_COOKIE['sex_error']);
-  $errors['hand'] = !empty($_COOKIE['hand_error']);
+  $errors['sex1'] = !empty($_COOKIE['sex_error1']);
+  $errors['sex2'] = !empty($_COOKIE['sex_error2']);
+  $errors['hand1'] = !empty($_COOKIE['hand_error1']);
+  $errors['hand2'] = !empty($_COOKIE['hand_error2']);
   $errors['abilities1'] = !empty($_COOKIE['abilities_error1']);
   $errors['abilities2'] = !empty($_COOKIE['abilities_error2']);
   $errors['biography1'] = !empty($_COOKIE['biography_error1']);
@@ -24,47 +26,55 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
   if ($errors['name']) {
     setcookie('name_error', '', 100000);
-    $messages[] = '<div class="error">Заполните имя</div>';
+    $messages['name'] = '<p class="msg">Заполните имя</p>';
   }
   if ($errors['email1']) {
     setcookie('email_error1', '', 100000);
-    $messages[] = '<div class="error">Заполните email</div>';
+    $messages['email1'] = '<p class="msg">Заполните email</p>';
   } else if ($errors['email2']) {
     setcookie('email_error2', '', 100000);
-    $messages[] = '<div class="error">Корректно* заполните email</div>';
+    $messages['email2'] = '<p class="msg">Корректно* заполните email</p>';
   }
   if ($errors['year1']) {
     setcookie('year_error1', '', 100000);
-    $messages[] = '<div class="error">Неправильный формат ввода года</div>';
+    $messages['year1'] = '<p class="msg">Неправильный формат ввода года</p>';
   } else if ($errors['year2']) {
     setcookie('year_error2', '', 100000);
-    $messages[] = '<div class="error">Извините, вам должно быть 14 лет</div>';
+    $messages['year2'] = '<p class="msg">Вам должно быть 14 лет</p>';
   }
-  if ($errors['sex']) {
-    setcookie('sex_error', '', 100000);
-    $messages[] = '<div class="error">Выбран неизвестный пол</div>';
+  if ($errors['sex1']) {
+    setcookie('sex_error1', '', 100000);
+    $messages['sex1'] = '<p class="msg">Выберите пол</p>';
   }
-  if ($errors['hand']) {
-    setcookie('hand_error', '', 100000);
-    $messages[] = '<div class="error">Выбрана неизвестная рука.</div>';
+  if ($errors['sex2']) {
+    setcookie('sex_error2', '', 100000);
+    $messages['sex2'] = '<p class="msg">Выбран неизвестный пол</p>';
+  }
+  if ($errors['hand1']) {
+    setcookie('hand_error1', '', 100000);
+    $messages['hand1'] = '<p class="msg">Выберите руку</p>';
+  }
+  if ($errors['hand2']) {
+    setcookie('hand_error2', '', 100000);
+    $messages['hand2'] = '<p class="msg">Выбрана неизвестная рука</p>';
   }
   if ($errors['abilities1']) {
     setcookie('abilities_error1', '', 100000);
-    $messages[] = '<div class="error">Выберите хотя бы одну сверхспособность</div>';
+    $messages['abilities1'] = '<p class="msg">Выберите хотя бы одну <br> сверхспособность</p>';
   } else if ($errors['abilities2']) {
     setcookie('abilities_error2', '', 100000);
-    $messages[] = '<div class="error">Выбрана неизвестная сверхспособность</div>';
+    $messages['abilities2'] = '<p class="msg">Выбрана неизвестная <br> сверхспособность</p>';
   }
   if ($errors['biography1']) {
-    setcookie('biography1_error', '', 100000);
-    $messages[] = '<div class="error">Расскажи о себе что-нибудь</div>';
+    setcookie('biography_error1', '', 100000);
+    $messages['biography1'] = '<p class="msg">Расскажи о себе что-нибудь</p>';
   } else if ($errors['biography2']) {
-    setcookie('biography2_error', '', 100000);
-    $messages[] = '<div class="error">Недопустимый формат ввода биографии</div>';
+    setcookie('biography_error2', '', 100000);
+    $messages['biography2'] = '<p class="msg">Недопустимый формат ввода <br> биографии</p>';
   }
   if ($errors['checkboxContract']) {
     setcookie('checkboxContract_error', '', 100000);
-    $messages[] = '<div class="error">Ознакомьтесь с контрактом</div>';
+    $messages['checkboxContract'] = '<p class="msg">Ознакомьтесь с контрактом</p>';
   }
   $values = array();
   $values['name'] = empty($_COOKIE['name_value']) ? '' : $_COOKIE['name_value'];
@@ -105,11 +115,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   if (empty($email)) {
     setcookie('email_error1', '1', time() + 24 * 60 * 60);
     $errors = TRUE;
-  } else {
-    setcookie('email_value', $email, time() + 30 * 24 * 60 * 60);
-  }
-
-  if (!empty($email) && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+  } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     setcookie('email_error2', '1', time() + 24 * 60 * 60);
     $errors = TRUE;
   } else {
@@ -119,26 +125,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   if (!is_numeric($year)) {
     setcookie('year_error1', '1', time() + 24 * 60 * 60);
     $errors = TRUE;
-  } else {
-    setcookie('year_value', $year, time() + 30 * 24 * 60 * 60);
-  }
-
-  if (is_numeric($year) && (2023 - $year) < 14) {
+  } else if ((2023 - $year) < 14) {
     setcookie('year_error2', '1', time() + 24 * 60 * 60);
     $errors = TRUE;
   } else {
     setcookie('year_value', $year, time() + 30 * 24 * 60 * 60);
   }
 
-  if ($sex != 'male' && $sex != 'female') {
-    setcookie('sex_error', '1', time() + 24 * 60 * 60);
+  if (empty($sex)) {
+    setcookie('sex_error1', '1', time() + 24 * 60 * 60);
+    $errors = TRUE;
+  } else if ($sex != 'male' && $sex != 'female') {
+    setcookie('sex_error2', '1', time() + 24 * 60 * 60);
     $errors = TRUE;
   } else {
     setcookie('sex_value', $sex, time() + 30 * 24 * 60 * 60);
   }
 
-  if ($hand != 'right' && $hand != 'left') {
-    setcookie('hand_error', '1', time() + 24 * 60 * 60);
+  if (empty($hand)) {
+    setcookie('hand_error1', '1', time() + 24 * 60 * 60);
+    $errors = TRUE;
+  } else if ($hand != 'right' && $hand != 'left') {
+    setcookie('hand_error2', '1', time() + 24 * 60 * 60);
     $errors = TRUE;
   } else {
     setcookie('hand_value', $hand, time() + 30 * 24 * 60 * 60);
@@ -147,25 +155,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   if (empty($abilities)) {
     setcookie('abilities_error1', '1', time() + 24 * 60 * 60);
     $errors = TRUE;
-  } else {
-    setcookie('abilities_value', $abilities, time() + 30 * 24 * 60 * 60);
-  }
-
-  if (!empty($abilities) && count($filtred_abilities) != count($abilities)) {
+  } else if (count($filtred_abilities) != count($abilities)) {
     setcookie('abilities_error2', '1', time() + 24 * 60 * 60);
     $errors = TRUE;
   } else {
-    setcookie('abilities_value', $abilities, time() + 30 * 24 * 60 * 60);
+    setcookie('abilities_value', serialize($abilities), time() + 30 * 24 * 60 * 60);
   }
 
   if (empty($biography)) {
     setcookie('biography_error1', '1', time() + 24 * 60 * 60);
     $errors = TRUE;
-  } else {
-    setcookie('biography_value', $biography, time() + 30 * 24 * 60 * 60);
-  }
-
-  if (!empty($biography) && !preg_match('/^[\p{Cyrillic}\d\s,.!?-]+$/u', $biography)) {
+  } else if (!preg_match('/^[\p{Cyrillic}\d\s,.!?-]+$/u', $biography)) {
     setcookie('biography_error2', '1', time() + 24 * 60 * 60);
     $errors = TRUE;
   } else {
@@ -189,8 +189,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     setcookie('email_error2', '', 100000);
     setcookie('year_error1', '', 100000);
     setcookie('year_error2', '', 100000);
-    setcookie('sex_error', '', 100000);
-    setcookie('hand_error', '', 100000);
+    setcookie('sex_error1', '', 100000);
+    setcookie('sex_error2', '', 100000);
+    setcookie('hand_error1', '', 100000);
+    setcookie('hand_error2', '', 100000);
     setcookie('abilities_error1', '', 100000);
     setcookie('abilities_error2', '', 100000);
     setcookie('biography_error1', '', 100000);
