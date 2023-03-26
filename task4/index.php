@@ -214,6 +214,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     print('Error : ' . $e->getMessage());
     exit();
   }
+  $test = 'test';
   setcookie('save', '1');
   header('Location: ?save=1');
 }
