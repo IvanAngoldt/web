@@ -217,5 +217,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     exit();
   }
   setcookie('save', '1');
-  header('Location: ?save=1');
+  header('Location: index.php');
 }
