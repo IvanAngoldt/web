@@ -27,38 +27,61 @@ form {
 }
 
 
-    .line {
-        width: 285px;
-        height: 30px;
-        font-size: 16px;
-        background: transparent;
-        border: none;
-        border-bottom: 2px solid white;
-        border-radius: 0px;
-        color: white;
-        padding: 0px;
-        padding-left: 5px;
-        padding-bottom: 5px;
-        display: block;
-        outline: none;
-    }
+.line {
+    width: 285px;
+    height: 30px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+    border-radius: 0px;
+    color: white;
+    padding: 0px;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    display: block;
+  }
+  
+  .line:focus {
+    outline: none;
+  }
+  
+  .labelText {
+    font-size: 18px;
+    font-weight: normal;
+    color: #969696;
+    position: absolute;
+    pointer-events: none;
+    top: 5px;
+    left: 5px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+  }
+  
+  .line:not(:placeholder-shown) ~ .labelText {
+    left: 0px;
+    top: -30px;
+    font-size: 20px;
+    color: white;
+  }
+  
+  .line:focus ~ .labelText {
+    top: -30px;
+    left: 0;
+    font-size: 20px;
+    color: white;
+  }
 
-    .line:focus {
-        outline: none;
-    }
-
-    .labelText {
-        font-size: 18px;
-        font-weight: normal;
-        color: #969696;
-        position: absolute;
-        pointer-events: none;
-        top: 5px;
-        left: 5px;
-        transition: 0.2s ease all;
-        -moz-transition: 0.2s ease all;
-        -webkit-transition: 0.2s ease all;
-    }
+  .group1,
+  .group2 {
+    position: relative; 
+  }
+  
+  .group1 {
+    margin-bottom: 40px;
+  }
 
 h1 {
     text-align: center;

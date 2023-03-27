@@ -20,14 +20,18 @@
     </div>
     <div class="form-content">
       <div class="form-item">
-        <p <?php if ($errors['name']) {print 'class="error"';} ?>>Имя</p>
-        <?php if ($errors['name']) {print $messages['name'];} ?>
-        <input class="line" name="name" value="<?php echo $values['name']; ?>" />
+        <div class="group1">  
+          <input class="line" name="name" placeholder="" value="<?php echo $values['name']; ?>" />
+          <label class="labelText <?php if ($errors['name']) {print 'error';} ?>">Имя</label>
+          <?php if ($errors['name']) {print $messages['name'];} ?>
+        </div>
       </div>
       <div class="form-item">
-        <p <?php if ($errors['email1'] || $errors['email2']) {print 'class="error"';} ?>>Email</p>
-        <?php if ($errors['email1']) {print $messages['email1'];} else if ($errors['email2']) {print $messages['email2'];}?>
-        <input class="line" name="email" value="<?php print $values['email']; ?>" />
+        <div class="group2">
+          <input class="line" name="email" placeholder="" value="<?php print $values['email']; ?>" />
+          <label class="labelText <?php if ($errors['email1'] || $errors['email2']) {print 'error';} ?>">Email</label>
+          <?php if ($errors['email1']) {print $messages['email1'];} else if ($errors['email2']) {print $messages['email2'];}?>
+        </div>
       </div>
       <div class="form-item">
         <div class="date">
