@@ -117,7 +117,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $errors = TRUE;
   } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     setcookie('email_error2', '1', time() + 24 * 60 * 60);
-    setcookie('name_value', $name, time() + 30 * 24 * 60 * 60);
+    setcookie('email_value', $name, time() + 30 * 24 * 60 * 60);
     $errors = TRUE;
   } else {
     setcookie('email_value', $email, time() + 30 * 24 * 60 * 60);
@@ -128,7 +128,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $errors = TRUE;
   } else if ((2023 - $year) < 14) {
     setcookie('year_error2', '1', time() + 24 * 60 * 60);
-    setcookie('name_value', $name, time() + 30 * 24 * 60 * 60);
+    setcookie('year_value', $name, time() + 30 * 24 * 60 * 60);
     $errors = TRUE;
   } else {
     setcookie('year_value', $year, time() + 30 * 24 * 60 * 60);
@@ -169,7 +169,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $errors = TRUE;
   } else if (!preg_match('/^[\p{Cyrillic}\d\s,.!?-]+$/u', $biography)) {
     setcookie('biography_error2', '1', time() + 24 * 60 * 60);
-    setcookie('name_value', $name, time() + 30 * 24 * 60 * 60);
+    setcookie('biography_value', $name, time() + 30 * 24 * 60 * 60);
     $errors = TRUE;
   } else {
     setcookie('biography_value', $biography, time() + 30 * 24 * 60 * 60);
