@@ -212,7 +212,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     setcookie('checkboxContract_error', '', 100000);
   }
 
-
   $user = 'u52855';
   $pass = '5599036';
   $db = new PDO('mysql:host=localhost;dbname=u52855', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
@@ -222,7 +221,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
       session_start() && !empty($_SESSION['login'])) {
     // TODO: перезаписать данные в БД новыми данными,
     // кроме логина и пароля.
-    
+    try {
+      $stmt = $db->prepare("UPDATE application SET name = ?, email = ?, year = ?, sex = ?, hand = ?, biography = ?");
+      $stmt->execute([$name, $email, $year, $sex, $hand, $biography]);
+
+      $application_id = $db->lastInsertId();
+      $stmt = $db->prepare("UPDATE abilities SET application_id = ?, superpower = ?");
+      foreach ($abilities as $superpower_id) {
+        $stmt->execute([$application_id, $superpower_id]);
+      }
+      
+      // $stmt = $db->prepare("INSERT INTO users (, ) VALUES (?, ?)");
+      // $stmt->execute([$, $]);
+    } catch (PDOException $e) {
+      print('Error : ' . $e->getMessage());
+      exit();
+    } 
   }
   else {
     // Генерируем уникальный логин и пароль.
