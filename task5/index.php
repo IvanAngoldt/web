@@ -7,13 +7,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   if (!empty($_COOKIE['save'])) {
       setcookie('save', '', 100000);
       setcookie('login', '', 100000);
-      setcookie('pass', '', 100000);
+      setcookie('password', '', 100000);
       $messages['gucci'] = '<div class="good">Спасибо, результаты сохранены</div>';
-      if (!empty($_COOKIE['pass'])) {
+      if (!empty($_COOKIE['password'])) {
         $messages['login'] = sprintf('Вы можете <a href="login.php">войти</a> с логином <strong>%s</strong>
           и паролем <strong>%s</strong> для изменения данных.',
           strip_tags($_COOKIE['login']),
-          strip_tags($_COOKIE['pass']));
+          strip_tags($_COOKIE['password']));
       }
   }
   $errors = array();
@@ -222,7 +222,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     // TODO: перезаписать данные в БД новыми данными,
     // кроме логина и пароля.
     try {
-      $login = $_POST['login'];
+      $login = empty($_COOKIE['login']) ? '' : $_COOKIE['login'];
       $application_id = $db->prepare("SELECT application_id FROM users WHERE login = $login");
       $application_id->execute();
 
@@ -249,7 +249,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $password = rand(0, 100);
     // Сохраняем в Cookies.
     setcookie('login', $login);
-    setcookie('pass', $pass);
+    setcookie('password', $password);
 
     // TODO: Сохранение данных формы, логина и хеш md5() пароля в базу данных.
     // ...
