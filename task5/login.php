@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
 <form action="" method="post">
   <input name="login" />
-  <input name="pass" />
+  <input name="password" />
   <input type="submit" value="Войти" />
 </form>
 
@@ -47,8 +47,7 @@ else {
   // Если все ок, то авторизуем пользователя.
   $_SESSION['login'] = $_POST['login'];
   // Записываем ID пользователя.
-  $_SESSION['uid'] = 123;
-
+  $_SESSION['uid'] = $_POST['password'];
   // Делаем перенаправление.
   header('Location: ./');
 }
