@@ -234,9 +234,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
       foreach ($abilities as $superpower_id) {
         $stmt->execute([$superpower_id]);
       }
-      
-      // $stmt = $db->prepare("INSERT INTO users (, ) VALUES (?, ?)");
-      // $stmt->execute([$, $]);
+
     } catch (PDOException $e) {
       print('Error : ' . $e->getMessage());
       exit();
@@ -258,19 +256,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
       $stmt->execute([$name, $email, $year, $sex, $hand, $biography]);
 
       $application_id = $db->lastInsertId();
+
+      $stmt = $db->prepare("INSERT INTO users_app (application_id, login, password) VALUES (?, ?, ?)");
+      $stmt->execute([$application_id, $login, $password]);
+
       $stmt = $db->prepare("INSERT INTO abilities (application_id, superpower_id) VALUES (?, ?)");
       foreach ($abilities as $superpower_id) {
         $stmt->execute([$application_id, $superpower_id]);
       }
-
-      $stmt = $db->prepare("INSERT INTO users_app (application_id, login, password) VALUES (?, ?, ?)");
-      $stmt->execute([$application_id, $login, $password]);
+      
     } catch (PDOException $e) {
       print('Error : ' . $e->getMessage());
       exit();
     } 
   }
-
 
   setcookie('save', '1');
   header('Location: index.php');
