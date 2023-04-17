@@ -223,7 +223,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     // кроме логина и пароля.
     try {
       $login = empty($_COOKIE['login']) ? '' : $_COOKIE['login'];
-      $application_id = $db->prepare("SELECT application_id FROM users WHERE login = $login");
+      $application_id = $db->prepare("SELECT application_id FROM users_app WHERE login = $login");
       $application_id->execute();
 
       $stmt = $db->prepare("UPDATE application SET name = ?, email = ?, year = ?, sex = ?, hand = ?, biography = ? 
@@ -263,7 +263,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         $stmt->execute([$application_id, $superpower_id]);
       }
 
-      $stmt = $db->prepare("INSERT INTO users (application_id, login, password) VALUES (?, ?, ?)");
+      $stmt = $db->prepare("INSERT INTO users_app (application_id, login, password) VALUES (?, ?, ?)");
       $stmt->execute([$application_id, $login, $password]);
     } catch (PDOException $e) {
       print('Error : ' . $e->getMessage());
