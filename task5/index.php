@@ -222,13 +222,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     // TODO: перезаписать данные в БД новыми данными,
     // кроме логина и пароля.
     try {
-      $stmt = $db->prepare("UPDATE application SET name = ?, email = ?, year = ?, sex = ?, hand = ?, biography = ?");
+      $login = $_POST['login'];
+      $application_id = $db->prepare("SELECT application_id FROM users WHERE login = $login");
+      $application_id->execute();
+
+      $stmt = $db->prepare("UPDATE application SET name = ?, email = ?, year = ?, sex = ?, hand = ?, biography = ? 
+        WHERE application_id = $application_id");
       $stmt->execute([$name, $email, $year, $sex, $hand, $biography]);
 
-      $application_id = $db->lastInsertId();
-      $stmt = $db->prepare("UPDATE abilities SET application_id = ?, superpower = ?");
+      $stmt = $db->prepare("UPDATE abilities SET superpower = ? WHERE application_id = $application_id");
       foreach ($abilities as $superpower_id) {
-        $stmt->execute([$application_id, $superpower_id]);
+        $stmt->execute([$superpower_id]);
       }
       
       // $stmt = $db->prepare("INSERT INTO users (, ) VALUES (?, ?)");
@@ -242,7 +246,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     // Генерируем уникальный логин и пароль.
     // TODO: сделать механизм генерации, например функциями rand(), uniquid(), md5(), substr().
     $login = 'user' . rand(0, 100);
-    $pass = rand(0, 100);
+    $password = rand(0, 100);
     // Сохраняем в Cookies.
     setcookie('login', $login);
     setcookie('pass', $pass);
@@ -258,9 +262,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
       foreach ($abilities as $superpower_id) {
         $stmt->execute([$application_id, $superpower_id]);
       }
-      
-      // $stmt = $db->prepare("INSERT INTO users (, ) VALUES (?, ?)");
-      // $stmt->execute([$, $]);
+
+      $stmt = $db->prepare("INSERT INTO users (application_id, login, password) VALUES (?, ?, ?)");
+      $stmt->execute([$application_id, $login, $password]);
     } catch (PDOException $e) {
       print('Error : ' . $e->getMessage());
       exit();
