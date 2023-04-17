@@ -223,17 +223,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     // кроме логина и пароля.
     try {
       $login = empty($_COOKIE['login']) ? '' : $_COOKIE['login'];
-      $application_id = $db->prepare("SELECT application_id FROM users_app WHERE login = $login");
-      $application_id->execute();
 
       $stmt = $db->prepare("UPDATE application SET name = ?, email = ?, year = ?, sex = ?, hand = ?, biography = ? 
-        WHERE application_id = $application_id");
+        WHERE login = $login");
       $stmt->execute([$name, $email, $year, $sex, $hand, $biography]);
 
-      $stmt = $db->prepare("UPDATE abilities SET superpower = ? WHERE application_id = $application_id");
-      foreach ($abilities as $superpower_id) {
-        $stmt->execute([$superpower_id]);
-      }
+      // $stmt = $db->prepare("UPDATE abilities SET superpower = ? WHERE application_id = $application_id");
+      // foreach ($abilities as $superpower_id) {
+      //   $stmt->execute([$superpower_id]);
+      // }
 
     } catch (PDOException $e) {
       print('Error : ' . $e->getMessage());
@@ -252,19 +250,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     // TODO: Сохранение данных формы, логина и хеш md5() пароля в базу данных.
     // ...
     try {
-      $stmt = $db->prepare("INSERT INTO application (name, email, year, sex, hand, biography) VALUES (?, ?, ?, ?, ?, ?)");
-      $stmt->execute([$name, $email, $year, $sex, $hand, $biography]);
+      $stmt = $db->prepare("INSERT INTO application (name, email, year, sex, hand, biography, login, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+      $stmt->execute([$name, $email, $year, $sex, $hand, $biography, $login, $password]);
 
       $application_id = $db->lastInsertId();
-
-      $stmt = $db->prepare("INSERT INTO users_app (application_id, login, password) VALUES (?, ?, ?)");
-      $stmt->execute([$application_id, $login, $password]);
 
       $stmt = $db->prepare("INSERT INTO abilities (application_id, superpower_id) VALUES (?, ?)");
       foreach ($abilities as $superpower_id) {
         $stmt->execute([$application_id, $superpower_id]);
       }
-      
+
     } catch (PDOException $e) {
       print('Error : ' . $e->getMessage());
       exit();
