@@ -9,19 +9,26 @@
   <title>Login</title>
 </head>
 <body>
-<div class="login">
-    <?php 
-      if (!empty($messages)) {
-        foreach ($messages as $message) {
-          print($message);
-        }
+<div class="msgbox">
+  <?php 
+    if (!empty($messages)) {
+      foreach ($messages as $message) {
+        print($message);
       }
-    ?>
-    <form action="" method="post">
-      <p>Вход</p>
-      <input name="login" class="form-content">
-      <input name="password" type="password" class="form-content">
-      <input type="submit" value="Войти" class="form-content"/>
-    </form>
+    }
+  ?>
+</div>
+<div class="login">
+  <form action="" method="post">
+    <h1>Вход</h1>
+    <p <?php  if ($errors['login1'] || $errors['login2']) print 'class="error"'?>>Логин</p>
+    <input name="login" class="form-content line">
+    <p <?php  if ($errors['password'] || $errors['login2']) print 'class="error"'?>>Пароль</p>
+    <input name="password" type="password" class="form-content line">
+    <input type="submit" value="Войти" class="form-content btn">
+  </form>
+  <div class="href">
+    <a href="../task3/showDB/"><img src="https://cdn-icons-png.flaticon.com/512/1602/1602309.png" alt="db" width="20px" height="20px"></a>
+  </div>
 </div>
 </body>

@@ -10,16 +10,16 @@ CREATE TABLE application (
 );
 
 CREATE TABLE abilities (
-  abilities_id int(10) unsigned NOT NULL AUTO_INCREMENT,
-  application_id int(10) NOT NULL DEFAULT 0,
-  superpower_id int(10) NOT NULL DEFAULT 0,
+  abilities_id int(128) unsigned NOT NULL AUTO_INCREMENT,
+  application_id int(128) NOT NULL DEFAULT 0,
+  superpower_id int(4) NOT NULL DEFAULT 0,
   PRIMARY KEY (abilities_id)
 );
 
 CREATE TABLE users (
-  user_id int(10) unsigned NOT NULL AUTO_INCREMENT,
-  application_id int(10) NOT NULL DEFAULT 0,
-  login varchar(10) NOT NULL DEFAULT '',
-  password varchar(10) NOT NULL DEFAULT '',
+  user_id int(128) unsigned NOT NULL AUTO_INCREMENT,
+  application_id int(128) NOT NULL DEFAULT 0,
+  login varchar(16) NOT NULL DEFAULT '',
+  password varchar(32) NOT NULL DEFAULT '',
   PRIMARY KEY (user_id)
-)
+);

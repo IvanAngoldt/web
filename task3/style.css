@@ -172,3 +172,9 @@ select {
 .href a {
     text-decoration: none;
 }
+
+@media screen and (max-height: 1081px) {
+    form {
+        scale: 0.9;
+    }
+}

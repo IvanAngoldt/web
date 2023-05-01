@@ -94,7 +94,7 @@
     </div>
   </form>
   <div class="href">
-    <a href="showDB/"><img src="https://cdn-icons-png.flaticon.com/512/1602/1602309.png" alt="db" width="20px" height="20px"></a>
+    <a href="../task6/"><img src="https://cdn-icons-png.flaticon.com/512/1602/1602309.png" alt="db" width="20px" height="20px"></a>
   </div>
 </body> 
 </html>

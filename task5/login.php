@@ -50,11 +50,13 @@ else {
   $pass = '5599036';
   $db = new PDO('mysql:host=localhost;dbname=u52855', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
   $stmt = $db->prepare('SELECT user_id FROM users WHERE (login = ?) AND (password = ?) ');
-  $stmt->execute([$login, $password]);
+  $stmt->execute([$login, md5($password)]);
 
   if ($stmt->rowCount() > 0) {
     $_SESSION['login'] = $_POST['login'];
-    $_SESSION['uid'] = 123;
+    $stmt = $db->prepare("SELECT application_id FROM users WHERE login = ?");
+    $stmt->execute([$login]);
+    $_SESSION['uid'] = $stmt->fetchColumn();
     header('Location: ./');
   } else {
     setcookie('login_error2', '1', time() + 24 * 60 * 60);

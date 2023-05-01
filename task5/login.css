@@ -23,3 +23,58 @@ form {
     font-size: 20px;
     margin-bottom: 20px;
 }
+
+h1 {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+  
+p {
+    margin-top: 0px;
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+.line {
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid white;
+    border-radius: 0px;
+    color: white;
+    padding-left: 0px;
+}
+
+.line:focus {
+    outline: none;
+}
+
+.btn {
+    margin-bottom: 0px;
+}
+
+.error {
+    color: rgb(255, 68, 68);
+}
+
+.msgbox {
+    margin-bottom: 50px;
+}
+
+.msg {
+    margin-bottom: 15px;
+    font-size: 25px;
+    color: rgb(255, 68, 68);
+}
+
+.href {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    opacity: 0.4;
+}
+
+.href a {
+    text-decoration: none;
+}

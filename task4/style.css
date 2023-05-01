@@ -164,3 +164,9 @@ select {
     font-size: 25px;
     margin-bottom: 20px;
 }
+
+@media screen and (max-height: 1081px) {
+    form {
+        scale: 0.9;
+    }
+}

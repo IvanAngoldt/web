@@ -142,7 +142,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         exit();
     }
 
-    printf('<div id="header">Вход с логином %s, uid %d<br><a href=logout.php>Выйти</a></div>', $_SESSION['login'], $_SESSION['uid']);
+    printf('<div id="header"><p>Вход с логином %s; uid: %d</p><a href=logout.php>Выйти</a></div>', $_SESSION['login'], $_SESSION['uid']);
   }
   include('form.php');
 } else {
@@ -293,9 +293,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
   }
   else {
-    // TODO: сделать механизм генерации, например функциями rand(), uniquid(), md5(), substr().
-    $login = 'user' . rand(1, 100);
-    $password = rand(1, 100);
+    $login = 'user' . rand(1, 1000);
+    $password = rand(1000, 9999);
     setcookie('login', $login);
     setcookie('password', $password);
     try {
@@ -307,7 +306,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         $stmt->execute([$application_id, $superpower_id]);
       }
       $stmt = $db->prepare("INSERT INTO users (application_id, login, password) VALUES (?, ?, ?)");
-      $stmt->execute([$application_id, $login, $password]);
+      $stmt->execute([$application_id, $login, md5($password)]);
     } catch (PDOException $e) {
       print('Error : ' . $e->getMessage());
       exit();
