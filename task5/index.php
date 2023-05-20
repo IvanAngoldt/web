@@ -91,16 +91,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   }
 
   $values = array();
-  $values['name'] = empty($_COOKIE['name_value']) ? '' : strip_tags($_COOKIE['name_value']);
-  $values['email'] = empty($_COOKIE['email_value']) ? '' : strip_tags($_COOKIE['email_value']);
-  $values['year'] = empty($_COOKIE['year_value']) ? '' : strip_tags($_COOKIE['year_value']);
-  $values['sex'] = empty($_COOKIE['sex_value']) ? '' : strip_tags($_COOKIE['sex_value']);
-  $values['hand'] = empty($_COOKIE['hand_value']) ? '' : strip_tags($_COOKIE['hand_value']);
-  $values['abilities'] = empty($_COOKIE['abilities_value']) ? '' : strip_tags($_COOKIE['abilities_value']);
-  $values['biography'] = empty($_COOKIE['biography_value']) ? '' : strip_tags($_COOKIE['biography_value']);
-  $values['checkboxContract'] = empty($_COOKIE['checkboxContract_value']) ? '' : strip_tags($_COOKIE['checkboxContract_value']);
+  $values['name'] = empty($_COOKIE['name_value']) ? '' : htmlspecialchars(strip_tags($_COOKIE['name_value']));
+  $values['email'] = empty($_COOKIE['email_value']) ? '' : htmlspecialchars(strip_tags($_COOKIE['email_value']));
+  $values['year'] = empty($_COOKIE['year_value']) ? '' : htmlspecialchars(strip_tags($_COOKIE['year_value']));
+  $values['sex'] = empty($_COOKIE['sex_value']) ? '' : htmlspecialchars(strip_tags($_COOKIE['sex_value']));
+  $values['hand'] = empty($_COOKIE['hand_value']) ? '' : htmlspecialchars(strip_tags($_COOKIE['hand_value']));
+  $values['abilities'] = empty($_COOKIE['abilities_value']) ? [] : array_map('strip_tags', unserialize($_COOKIE['abilities_value']));
+  $values['biography'] = empty($_COOKIE['biography_value']) ? '' : htmlspecialchars(strip_tags($_COOKIE['biography_value']));
+  $values['checkboxContract'] = empty($_COOKIE['checkboxContract_value']) ? '' : htmlspecialchars(strip_tags($_COOKIE['checkboxContract_value']));
 
   if (count(array_filter($errors)) === 0 && !empty($_COOKIE[session_name()]) && session_start() && !empty($_SESSION['login'])) {
+    $_SESSION['token'] = bin2hex(random_bytes(32));
     $login = $_SESSION['login'];
     try {
       $stmt = $db->prepare("SELECT application_id FROM users WHERE login = ?");
@@ -115,33 +116,31 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
       $stmt->execute([$app_id]);
       $abilities = $stmt->fetchAll(PDO::FETCH_COLUMN, 0);
 
-      if (!empty($dates[0]['name'])) {
-        $values['name'] = $dates[0]['name'];
+      if (!empty($dates['name'])) {
+        $values['name'] = htmlspecialchars(strip_tags($dates[0]['name']));
       }
-      if (!empty($dates[0]['email'])) {
-        $values['email'] = $dates[0]['email'];
+      if (!empty($dates['email'])) {
+        $values['email'] = htmlspecialchars(strip_tags($dates[0]['email']));
       }
-      if (!empty($dates[0]['year'])) {
-        $values['year'] = $dates[0]['year'];
+      if (!empty($dates['year'])) {
+        $values['year'] = htmlspecialchars(strip_tags($dates[0]['year']));
       }
-      if (!empty($dates[0]['sex'])) {
-        $values['sex'] = $dates[0]['sex'];
+      if (!empty($dates['sex'])) {
+        $values['sex'] = htmlspecialchars(strip_tags($dates[0]['sex']));
       }
-      if (!empty($dates[0]['hand'])) {
-        $values['hand'] = $dates[0]['hand'];
+      if (!empty($dates['hand'])) {
+        $values['hand'] = htmlspecialchars(strip_tags($dates[0]['hand']));
       }
       if (!empty($abilities)) {
-        $values['abilities'] =  serialize($abilities);
+        $values['abilities'] =  array_map('strip_tags', $abilities);
       }
       if (!empty($dates[0]['biography'])) {
-        $values['biography'] = $dates[0]['biography'];
+        $values['biography'] = htmlspecialchars(strip_tags($dates[0]['biography']));
       }
-
     } catch (PDOException $e) {
         print('Error : ' . $e->getMessage());
         exit();
     }
-
     printf('<div id="header"><p>Вход с логином %s; uid: %d</p><a href=logout.php>Выйти</a></div>', $_SESSION['login'], $_SESSION['uid']);
   }
   include('form.php');
@@ -262,35 +261,38 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   }
 
   if (!empty($_COOKIE[session_name()]) && session_start() && !empty($_SESSION['login'])) {
-    $login = $_SESSION['login'];
-    try {
-      $stmt = $db->prepare("SELECT application_id FROM users WHERE login = ?");
-      $stmt->execute([$login]);
-      $app_id = $stmt->fetchColumn();
+    if (!empty($_POST['token']) && hash_equals($_POST['token'], $_SESSION['token'])) {
+      $login = $_SESSION['login'];
+      try {
+        $stmt = $db->prepare("SELECT application_id FROM users WHERE login = ?");
+        $stmt->execute([$login]);
+        $app_id = $stmt->fetchColumn();
 
-      $stmt = $db->prepare("UPDATE application SET name = ?, email = ?, year = ?, sex = ?, hand = ?, biography = ?
-        WHERE application_id = ?");
-      $stmt->execute([$name, $email, $year, $sex, $hand, $biography, $app_id]);
+        $stmt = $db->prepare("UPDATE application SET name = ?, email = ?, year = ?, sex = ?, hand = ?, biography = ?
+          WHERE application_id = ?");
+        $stmt->execute([$name, $email, $year, $sex, $hand, $biography, $app_id]);
 
-      $stmt = $db->prepare("SELECT superpower_id FROM abilities WHERE application_id = ?");
-      $stmt->execute([$app_id]);
-      $abil = $stmt->fetchAll(PDO::FETCH_COLUMN, 0);
-
-      if (array_diff($abil, $abilities)) {
-        $stmt = $db->prepare("DELETE FROM abilities WHERE application_id = ?");
+        $stmt = $db->prepare("SELECT superpower_id FROM abilities WHERE application_id = ?");
         $stmt->execute([$app_id]);
+        $abil = $stmt->fetchAll(PDO::FETCH_COLUMN, 0);
 
-        $stmt = $db->prepare("INSERT INTO abilities (application_id, superpower_id) VALUES (?, ?)");
-        foreach ($abilities as $superpower_id) {
-          $stmt->execute([$app_id, $superpower_id]);
+        if (array_diff($abil, $abilities)) {
+          $stmt = $db->prepare("DELETE FROM abilities WHERE application_id = ?");
+          $stmt->execute([$app_id]);
+
+          $stmt = $db->prepare("INSERT INTO abilities (application_id, superpower_id) VALUES (?, ?)");
+          foreach ($abilities as $superpower_id) {
+            $stmt->execute([$app_id, $superpower_id]);
+          }
         }
+
+      } catch (PDOException $e) {
+          print('Error : ' . $e->getMessage());
+          exit();
       }
-
-    } catch (PDOException $e) {
-        print('Error : ' . $e->getMessage());
-        exit();
+    } else {
+        die('Ошибка CSRF: недопустимый токен');
     }
-
   }
   else {
     $login = 'user' . rand(1, 1000);
