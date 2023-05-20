@@ -89,15 +89,15 @@
         <?php if ($errors['abilities1']) {print $messages['abilities1'];} else if ($errors['abilities2']) {print $messages['abilities2'];}?>
         <ul>
           <li>
-            <input type="checkbox" id="god" name="abilities[]" value=1 <?php if (isset($values['abilities']) && !empty($values['abilities']) && in_array(1, unserialize($values['abilities']))) {print 'checked';}?>>
+            <input type="checkbox" id="god" name="abilities[]" value=1 <?php if (isset($values['abilities']) && !empty($values['abilities']) && in_array(1, $values['abilities'])) {print 'checked';}?>>
             <label for="god">бессмертие</label>
           </li>
           <li>
-            <input type="checkbox" id="noclip" name="abilities[]" value=2 <?php if (isset($values['abilities']) && !empty($values['abilities']) && in_array(2, unserialize($values['abilities']))) {print 'checked';}?>>
+            <input type="checkbox" id="noclip" name="abilities[]" value=2 <?php if (isset($values['abilities']) && !empty($values['abilities']) && in_array(2, $values['abilities'])) {print 'checked';}?>>
             <label for="noclip">прохождение сквозь стены</label>
           </li>
           <li>
-            <input type="checkbox" id="levitation" name="abilities[]" value=3 <?php if (isset($values['abilities']) && !empty($values['abilities']) && in_array(3, unserialize($values['abilities']))) {print 'checked';}?>>
+            <input type="checkbox" id="levitation" name="abilities[]" value=3 <?php if (isset($values['abilities']) && !empty($values['abilities']) && in_array(3, $values['abilities'])) {print 'checked';}?>>
             <label for="levitation">левитация</label>
           </li>
         </ul> 
@@ -115,6 +115,7 @@
         <label for="checkboxContract" <?php if ($errors['checkboxContract']) {print 'class="error"';} ?>>С контрактом ознакомлен</label>
         <?php if ($errors['checkboxContract']) {print $messages['checkboxContract'];} ?>
       </div>
+      <?php if (!empty($_SESSION['login'])) {echo '<input type="hidden" name="token" value="' . $_SESSION["token"] . '">'; } ?>
       <input class="btn" type="submit" name="submit" value="Отправить" />
     </div>
   </form>
