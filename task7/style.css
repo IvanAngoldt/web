@@ -1,0 +1,15 @@
+body {
+    background: #eceffc;
+    font-family: Montserrat;
+    padding: 0px 40px 40px 40px;
+}
+
+.toggle-button {
+    background-color: #ff0000;
+    color: #ffffff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
