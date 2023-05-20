@@ -50,11 +50,11 @@
                     echo    '<td style="font-weight: 700;">'; print($value['application_id']); echo '</td>';
                     echo    '<td>
                                 <input'; if(empty($_COOKIE['edit']) || ($_COOKIE['edit'] != $value['application_id'])) print(" disabled ");
-                                    else print(" "); echo 'class="input" name="name'.$value['application_id'].'" value="'; print($value['name']); echo '">
+                                    else print(" "); echo 'class="input" name="name'.$value['application_id'].'" value="'; print(htmlspecialchars(strip_tags($value['name']))); echo '">
                             </td>';
                     echo    '<td>
                                 <input'; if(empty($_COOKIE['edit']) || ($_COOKIE['edit'] != $value['application_id'])) print(" disabled ");
-                                    else print(" "); echo 'class="input" name="email'.$value['application_id'].'" value="'; print($value['email']); echo '">
+                                    else print(" "); echo 'class="input" name="email'.$value['application_id'].'" value="'; print(htmlspecialchars(strip_tags($value['email']))); echo '">
                             </td>';
                     echo    '<td>';
                     echo        '<select'; if(empty($_COOKIE['edit']) || ($_COOKIE['edit'] != $value['application_id'])) print(" disabled ");
@@ -71,24 +71,28 @@
                     echo    '<td> 
                                 <div class="column-item">
                                     <input'; if(empty($_COOKIE['edit']) || ($_COOKIE['edit'] != $value['application_id'])) print(" disabled ");
-                                        else print(" "); echo 'type="radio" id="radioMale'.$value['application_id'].'" name="sex'.$value['application_id'].'" value="male" '; if ($value['sex'] == 'male') echo 'checked'; echo '>
+                                        else print(" "); echo 'type="radio" id="radioMale'.$value['application_id'].'" name="sex'.$value['application_id'].'" value="male" ';
+                                            if (htmlspecialchars(strip_tags($value['sex'])) == 'male') echo 'checked'; echo '>
                                     <label for="radioMale'.$value['application_id'].'">Мужчина</label>
                                 </div>
                                 <div class="column-item">
                                     <input'; if(empty($_COOKIE['edit']) || ($_COOKIE['edit'] != $value['application_id'])) print(" disabled ");
-                                        else print(" "); echo 'type="radio" id="radioFemale'.$value['application_id'].'" name="sex'.$value['application_id'].'" value="female" '; if ($value['sex'] == 'female') echo 'checked'; echo '>
+                                        else print(" "); echo 'type="radio" id="radioFemale'.$value['application_id'].'" name="sex'.$value['application_id'].'" value="female" ';
+                                            if (htmlspecialchars(strip_tags($value['sex'])) == 'female') echo 'checked'; echo '>
                                     <label for="radioFemale'.$value['application_id'].'">Женщина</label>
                                 </div>
                             </td>';
                     echo    '<td>
                                 <div class="column-item">
                                     <input'; if(empty($_COOKIE['edit']) || ($_COOKIE['edit'] != $value['application_id'])) print(" disabled ");
-                                        else print(" "); echo 'type="radio" id="radioRight'.$value['application_id'].'" name="hand'.$value['application_id'].'" value="right" '; if ($value['hand'] == 'right') echo 'checked'; echo '>
+                                        else print(" "); echo 'type="radio" id="radioRight'.$value['application_id'].'" name="hand'.$value['application_id'].'" value="right" ';
+                                            if (htmlspecialchars(strip_tags($value['hand'])) == 'right') echo 'checked'; echo '>
                                     <label for="radioRight'.$value['application_id'].'">Правша</label>
                                 </div>
                                 <div class="column-item">
                                     <input'; if(empty($_COOKIE['edit']) || ($_COOKIE['edit'] != $value['application_id'])) print(" disabled ");
-                                        else print(" "); echo 'type="radio" id="radioLeft'.$value['application_id'].'" name="hand'.$value['application_id'].'" value="left" '; if ($value['hand'] == 'left') echo 'checked'; echo '>
+                                        else print(" "); echo 'type="radio" id="radioLeft'.$value['application_id'].'" name="hand'.$value['application_id'].'" value="left" ';
+                                            if (htmlspecialchars(strip_tags($value['hand'])) == 'left') echo 'checked'; echo '>
                                     <label for="radioLeft'.$value['application_id'].'">Левша</label>
                                 </div>
                             </td>';
@@ -114,7 +118,8 @@
                             </td>';
                     echo    '<td>
                                 <textarea'; if(empty($_COOKIE['edit']) || ($_COOKIE['edit'] != $value['application_id'])) print(" disabled ");
-                                    else print(" "); echo 'name="biography'.$value['application_id'].'" id="" cols="30" rows="4" maxlength="128">'; print $value['biography']; echo '</textarea>
+                                    else print(" "); echo 'name="biography'.$value['application_id'].'" id="" cols="30" rows="4" maxlength="128">';
+                                        print htmlspecialchars(strip_tags($value['biography'])); echo '</textarea>
                             </td>';
                     echo    '<td>';
                 if (empty($_COOKIE['edit']) || ($_COOKIE['edit'] != $value['application_id'])) {
@@ -134,6 +139,7 @@
                 }
             ?>
         </table>
+        <?php if (!empty($_SESSION['login'])) {echo '<input type="hidden" name="token" value="' . $_SESSION["token"] . '">'; } ?>
     </form>
 </body>
 </html>
